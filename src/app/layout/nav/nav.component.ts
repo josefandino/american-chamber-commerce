@@ -42,24 +42,30 @@ export class NavComponent {
       navigate: true,
     },
     {
-      name: 'Programs',
-      path: '/programs',
+      name: 'Services',
+      path: '/services',
       navigate: false,
     },
     {
-      name: 'Resources',
-      path: '/resources',
+      name: 'Events',
+      path: '/events',
       navigate: true,
     },
     {
-      name: 'Admissions',
-      path: '/admission',
+      name: 'Memberships',
+      path: '/memberships',
       navigate: true,
     },
     // {
-    //   name: 'Contact',
-    //   path: '/contact',
+    //   name: 'Careers',
+    //   path: '/careers',
+    //   navigate: true,
     // },
+    {
+      name: 'Contact',
+      path: '/contact',
+      navigate: true,
+    },
   ];
 
   public navEs = [
@@ -74,18 +80,28 @@ export class NavComponent {
       navigate: true,
     },
     {
-      name: 'Programas',
-      path: '/programs',
+      name: 'Servicios',
+      path: '/services',
       navigate: false,
     },
     {
-      name: 'Recursos',
-      path: '/resources',
+      name: 'Eventos',
+      path: '/events',
       navigate: true,
     },
     {
-      name: 'Admisiones',
-      path: '/admission',
+      name: 'Membresías',
+      path: '/memberships',
+      navigate: true,
+    },
+    // {
+    //   name: 'Carreras',
+    //   path: '/careers',
+    //   navigate: true,
+    // },
+    {
+      name: 'Contacto',
+      path: '/contact',
       navigate: true,
     },
   ];
@@ -102,6 +118,7 @@ export class NavComponent {
   public isLanguage = 'en';
   public flagEs = './assets/webp/es.webp';
   public flagEn = './assets/webp/en.webp';
+  public iconLanguage = './assets/svg/languege.svg';
 
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 

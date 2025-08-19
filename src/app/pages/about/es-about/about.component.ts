@@ -1,12 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { BannerComponent } from '@shared/components/banner/banner.component';
 import { TextService } from '@shared/helpers';
 
 @Component({
-    selector: 'app-es-about',
-    imports: [BannerComponent],
-    templateUrl: './about.component.html',
-    styleUrl: './about.component.scss'
+  selector: 'app-es-about',
+  imports: [],
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss',
 })
 export default class EsAboutComponent implements OnInit {
   title: string = '';

@@ -30,7 +30,6 @@ import { GlobalService } from '@shared/services/global.service';
 import { InputTextareaComponent } from '@shared/components/input-textarea/input-textarea.component';
 import { InputPhoneComponent } from '@shared/components/input-phone/input-phone.component';
 import { EstaSeguroComponent } from '@shared/components/esta-seguro/esta-seguro.component';
-import { BannerComponent } from '@shared/components/banner/banner.component';
 import { RespDialogI } from '@shared/models/global.interface';
 import { ContactFormI } from './constact.interface';
 
@@ -44,7 +43,6 @@ import { ContactFormI } from './constact.interface';
     InputTextComponent,
     InputEmailComponent,
     InputPhoneComponent,
-    BannerComponent,
     InputTextareaComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -79,6 +77,7 @@ export class ContactComponent implements OnInit {
       .subscribe((langue: string) => {
         if (langue === 'es') {
           this.labelsNames.set({
+            title: 'Formulario de contacto',
             first_name: 'Nombre',
             last_name: 'Apellido',
             phone: 'Teléfono',
@@ -88,6 +87,7 @@ export class ContactComponent implements OnInit {
           });
         } else {
           this.labelsNames.set({
+            title: 'Contact form',
             first_name: 'First Name',
             last_name: 'Last Name',
             phone: 'Phone',

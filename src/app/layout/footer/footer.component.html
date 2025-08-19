@@ -1,67 +1,23 @@
 <footer>
   @if (language() === 'en') {
-  <div class="childFooter">
-    <div class="links">
-      <div class="grid2-05">
-        <a routerLink="/programs">Programs</a>
-        <a routerLink="/academics">Academics</a>
-        <a routerLink="/departaments">Departments</a>
-        <a routerLink="/prospective-graduate-students">Theology Students</a>
-        <a routerLink="/how-to-apply">How to Apply</a>
-        <a routerLink="/admission">Admission</a>
-        <a routerLink="/student-handbook">Student Handbook</a>
-        <a routerLink="/teacher-manual">Faculty Handbook</a>
-        <!-- <a routerLink="/acuerdo-de-confidencialidad">Confidentiality Agreement</a> -->
-        <!-- <a href="./" target="_blank">Claims Submission Form</a> -->
-        <a routerLink="/reimbursement-for-students">
-          Refund Policy for Students
-        </a>
-        <a routerLink="/student-protection-rights">Student Rights and Protection</a>
-        <a routerLink="/management-structure">Organizational Structure WUT</a>
-      </div>
+    <div class="copyrigth">
+      <!-- <p>Phone: {{ chamberInfo.phone }}</p> -->
+
+      <p>{{ chamberInfo.address }}</p>
+      <p>{{ chamberInfo.address_secondary }}</p>
+      <p class="text-center">
+        © All rights reserved 2024 - {{ year }}, {{ title }}
+      </p>
     </div>
-  </div>
-
-  <div class="copyrigth">
-    <p>Phone: {{ chamberInfo.phone }}</p>
-
-    <p>{{ chamberInfo.address }}</p>
-    <p class="text-center">
-      © All rights reserved 2015 - {{ year }}, {{ title }}
-    </p>
-  </div>
   } @else {
-  <div class="childFooter">
-    <div class="links">
-      <div class="grid2-05">
-        <a routerLink="/programs"> Programas</a>
-        <a routerLink="/academics"> Academia</a>
-        <a routerLink="/departaments"> Deapartamento</a>
-        <a routerLink="/prospective-graduate-students">
-          Estudiantes en teología</a>
-        <a routerLink="/how-to-apply">Cómo aplicar</a>
-        <a routerLink="/admission"> Admissión </a>
-        <a routerLink="/student-handbook">Manual del Estudiante</a>
-        <a routerLink="/teacher-manual">Manual del Docente</a>
-        <a routerLink="/acuerdo-de-confidencialidad">Acuerdo de confidencialidad</a>
-        <a href="./" target="_blank"> Solocitud de reclamaciones</a>
-        <a routerLink="/reimbursement-for-students">
-          Reglamento de devolución de dinero a los estudiantes
-        </a>
-        <a routerLink="/student-protection-rights">
-          Derechos y protección al estudiante</a>
-        <a routerLink="/management-structure"> Estructura organizativa WU</a>
-      </div>
+    <div class="copyrigth">
+      <!-- <p>Phone: {{ chamberInfo.phone }}</p> -->
+
+      <p>{{ chamberInfo.address }}</p>
+      <p>{{ chamberInfo.address_secondary }}</p>
+      <p class="text-center">
+        © All rights reserved 2024 - {{ year }}, {{ title }}
+      </p>
     </div>
-  </div>
-
-  <div class="copyrigth">
-    <p>Phone: {{ chamberInfo.phone }}</p>
-
-    <p>{{ chamberInfo.address }}</p>
-    <p class="text-center">
-      © All rights reserved 2015 - {{ year }}, {{ title }}
-    </p>
-  </div>
   }
 </footer>

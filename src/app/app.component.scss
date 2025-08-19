@@ -1,3 +1,18 @@
+// .navigation {
+//   width: 100%;
+//   background: #fff;
+//   position: fixed;
+//   top: 0;
+//   z-index: 998;
+// }
+
+// .childNavigation {
+//   position: sticky;
+//   top: 0;
+//   z-index: 999;
+//   background: inherit;
+// }
+
 .loader {
   width: 100%;
   height: auto;
@@ -16,7 +31,6 @@
     max-width: 200px;
     object-fit: cover;
   }
-
 }
 
 .goBackTop {
@@ -29,16 +43,16 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  padding: .5rem;
+  padding: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 
   &:hover {
     transform: scale(1.1) translateY(-3px);
   }
 
   &:active {
-    transform: scale(.8) translateY(3px);
+    transform: scale(0.8) translateY(3px);
   }
 }
 

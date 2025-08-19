@@ -19,16 +19,20 @@
   width: 100%;
   max-width: 150px;
   height: auto;
+  min-height: 100px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
     // background: #fefefd;
-    width: 100%;
-    height: auto;
-    max-height: 3rem;
+    width: auto;
+    height: 100%;
     border-radius: 0.3rem;
-    padding: 0.1rem;
+    padding: 1rem;
     transition: all 0.2s ease;
+    block-size: 100%;
 
     &:hover {
       transform: scale(1.1);
@@ -70,8 +74,8 @@ nav ul li {
 ul li a {
   text-decoration: none;
   color: #fefefd;
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding: 1.5rem 1rem;
+  font-size: 1rem;
   font-weight: 400;
   display: block;
   text-wrap: nowrap;
@@ -105,6 +109,31 @@ nav ul li img {
   &:active {
     transform: scale(0.95);
   }
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+
+  span {
+    transition: all 0.2s ease;
+    font-size: 1.5rem;
+    color: #fefefd;
+    display: block;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    &:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.verticalLine {
+  width: 1px;
+  height: 30px;
+  background: #afafaf;
 }
 
 /* =========================================

@@ -4,14 +4,13 @@ import {
   HostListener,
   inject,
 } from '@angular/core';
-import { AccordionComponent } from '@shared/components/accordion/accordion.component';
 import { AccordionItem } from '@shared/components/accordion/accordion.interface';
 import { TextService } from '@shared/helpers';
 import { AngularModule, MaterialModule } from '@shared/modules';
 
 @Component({
   selector: 'app-en-home',
-  imports: [AngularModule, MaterialModule, AccordionComponent],
+  imports: [AngularModule, MaterialModule],
   templateUrl: './en-home.component.html',
   styleUrl: '../home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
