@@ -1,9 +1,27 @@
-<!-- <app-banner class="fadeIn" [banner]="flyer" [alt]="alt" /> -->
+<div class="slider">
+  <div class="childSlider" #slider>
+    @for (slide of sliderList; track slide.id) {
+    <div class="slide">
+      <img [src]="slide.img" [alt]="slide.alt" />
+    </div>
+    }
+    <!-- Duplicamos el primer slide para efecto infinito -->
+    <div class="slide">
+      <img [src]="sliderList[0].img" [alt]="sliderList[0].alt" />
+    </div>
+  </div>
+</div>
 
 
 <main class="pages">
   <div class="content fadeIn">
     <h1> American Chamber Commerce</h1>
+    <p><i>En American Chamber Commerce te brindamos soluciones legales y empresariales que te permiten crecer con
+        seguridad, expandir tus oportunidades y conectar con clientes a nivel global.</i></p>
+    <p>Impulsamos tu negocio al siguiente nivel: conecta, crece y trasciende sin fronteras.</p>
+
+    <p>Únete a la Cámara de Comercio</p>
+    <button>Únete</button>
 
 
     <h2>Preguntas Frecuentes (FAQs)</h2>

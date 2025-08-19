@@ -1,9 +1,16 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   HostListener,
   inject,
+  OnInit,
+  ViewChild,
 } from '@angular/core';
+
+import { interval, Subscription } from 'rxjs';
+
 import { AccordionComponent } from '@shared/components/accordion/accordion.component';
 import { AccordionItem } from '@shared/components/accordion/accordion.interface';
 import { CHAMBER_INFO } from '@shared/const/info-acc';
@@ -17,20 +24,24 @@ import { AngularModule, MaterialModule } from '@shared/modules';
   styleUrl: '../home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EsHomeComponent {
-  public flyer = './assets/webp/facultad_divinidades.webp';
-  public alt = 'Flyer American Chamber of Commerce';
-
+export class EsHomeComponent implements OnInit, AfterViewInit {
   public isMenuOpen = false;
   public scrollPosition: number = 0;
 
   title: string = '';
 
+  @ViewChild('slider') slider!: ElementRef<HTMLDivElement>;
+  currentIndex = 0;
+
   readonly chamberInfo = CHAMBER_INFO;
+
+  intervalSub!: Subscription;
+
   private readonly _text = inject(TextService);
 
   ngOnInit() {
     this.title = this._text.title;
+    this.intervalSub = interval(3000).subscribe(() => this.nextSlide());
   }
 
   toggleMenu() {
@@ -40,6 +51,32 @@ export class EsHomeComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.scrollPosition = window.scrollY * 0.5;
+  }
+
+  ngAfterViewInit(): void {
+    // escuchamos el fin de la transición
+    this.slider.nativeElement.addEventListener('transitionend', () => {
+      if (this.currentIndex === this.sliderList.length) {
+        // si estamos en el slide duplicado (el 10), saltamos sin animación al original (0)
+        this.slider.nativeElement.style.transition = 'none';
+        this.currentIndex = 0;
+        this.slider.nativeElement.style.transform = `translateX(0%)`;
+
+        // forzamos reflujo para reactivar transición en el siguiente movimiento
+        this.slider.nativeElement.offsetHeight;
+        this.slider.nativeElement.style.transition =
+          'transform 0.6s ease-in-out';
+      }
+    });
+  }
+
+  nextSlide() {
+    this.currentIndex++;
+    this.slider.nativeElement.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+  }
+
+  ngOnDestroy(): void {
+    this.intervalSub.unsubscribe();
   }
 
   public handleKeyDown(event: KeyboardEvent) {
@@ -161,6 +198,54 @@ export class EsHomeComponent {
           text: `Puede contactarnos a través de nuestro portal oficial, correo electrónico info@americanchamberofcommerce.us o mediante WhatsApp al +1-347-545-9684. También estamos presentes en Facebook, LinkedIn e Instagram.`,
         },
       ],
+    },
+  ];
+
+  public sliderList = [
+    {
+      id: 1,
+      img: './assets/webp/slider/slider-01.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 2,
+      img: './assets/webp/slider/slider-02.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 3,
+      img: './assets/webp/slider/slider-03.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 4,
+      img: './assets/webp/slider/slider-04.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 5,
+      img: './assets/webp/slider/slider-05.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 6,
+      img: './assets/webp/slider/slider-06.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 7,
+      img: './assets/webp/slider/slider-07.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 8,
+      img: './assets/webp/slider/slider-08.webp',
+      alt: this.chamberInfo.title,
+    },
+    {
+      id: 9,
+      img: './assets/webp/slider/slider-09.webp',
+      alt: this.chamberInfo.title,
     },
   ];
 }
