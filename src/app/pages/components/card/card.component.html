@@ -1,0 +1,14 @@
+<div class="cardPrograms">
+  @for (lp of listPrograms; track $index) {
+  <div class="childCardPrograms">
+    <div class="top">
+    <h3>{{lp.title}}</h3>
+    <p>{{lp.desc}}</p>
+    </div>
+    
+    <div class="bottom">
+      <a [routerLink]="lp.path"> Read more.. </a>
+    </div>
+  </div>
+  }
+</div>

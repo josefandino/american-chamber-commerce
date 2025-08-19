@@ -1,0 +1,38 @@
+.cardPrograms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+  
+  }
+  
+  .childCardPrograms {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, .1);
+    border-radius: .3rem;
+    padding: 0 1rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    a {
+      text-decoration: none;
+      color: #333;
+      border: 1px solid var(--color-primary);
+      border-radius: 2rem;
+      display: block;
+      padding: .5rem 1rem;
+      text-align: center;
+  
+      transition: all .2s ease;
+  
+      &:hover {
+        background-color: var(--color-primary);
+        color: #fefefe;
+      }
+  
+      &:active {
+        transform: scale(.95);
+      }
+    }
+  }

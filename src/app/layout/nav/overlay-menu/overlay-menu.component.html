@@ -1,0 +1,33 @@
+<div class="overflow">
+  <div class="childOverflow">
+    @if (language() === 'es') {
+      @for (lp of listProgramsEs(); track $index) {
+        <ul>
+          <li (click)="emitEventOverlay()">
+            <a
+              [routerLink]="lp.path"
+              routerLinkActive="routerLinkActive"
+              href="{{ lp.path }}"
+            >
+              {{ lp.title }}
+            </a>
+          </li>
+        </ul>
+      }
+    } @else {
+      @for (lp of listProgramsEn(); track $index) {
+        <ul>
+          <li (click)="emitEventOverlay()">
+            <a
+              [routerLink]="lp.path"
+              routerLinkActive="routerLinkActive"
+              href="{{ lp.path }}"
+            >
+              {{ lp.title }}
+            </a>
+          </li>
+        </ul>
+      }
+    }
+  </div>
+</div>

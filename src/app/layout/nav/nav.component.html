@@ -1,0 +1,155 @@
+@if (language() === 'en') {
+@if (isOverlay() === true) {
+<app-overlay-menu (handleChangeOverlay)="handleChangeOverlay()" />
+}
+<!-- <section class="navPc" [ngStyle]="{'transform': 'translateY(' + scrollPosition + 'px)'}"> -->
+<section class="navPc">
+  <nav>
+    <div class="logo fadeIn">
+      <a routerLink="/pages/home">
+        <img src="/assets/webp/logo_blanco.webp" alt="Logo American Chamber Commerce" />
+      </a>
+    </div>
+
+    <ul class="fadeIn">
+      @for (i of navEn; track i.name) {
+      <li>
+        @if (!i.navigate) {
+        <a href="#" (click)="onOverflow(true); $event.preventDefault()">{{
+          i.name
+          }}</a>
+        } @else {
+        <a [routerLink]="i.path" routerLinkActive="routerLinkActive" (click)="onOverflow(false)">
+          {{ i.name }}
+        </a>
+        }
+      </li>
+      }
+
+      <li class="language" (click)="changeLanguage('en')">
+        <img src="{{ flagEn }}" alt="Flag English" />
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<section class="navMobile" [class.open]="isMenuOpen">
+  <div class="menuMobile">
+    <div class="logo fadeIn">
+      <a routerLink="/pages/home">
+        <img src="/assets/webp/logo_blanco.webp" alt="Logo American Chamber Commerce" />
+      </a>
+    </div>
+
+    <div class="toggleMenu" (click)="toggleMenu()">
+      @if (isMenuOpen) {
+      <mat-icon class="fadeIn" fontIcon="close"></mat-icon>
+      } @else {
+      <mat-icon class="fadeIn" fontIcon="menu"></mat-icon>
+      }
+    </div>
+  </div>
+
+  <ng-container *ngIf="isMenuOpen === true">
+    <nav class="sidebar fadeIn">
+      <ul class="menuSidebar fadeIn">
+        @for (i of navEn; track i.name) {
+        <li (click)="toggleMenu()">
+          @if (!i.navigate) {
+          <a href="#" (click)="onOverflow(true); $event.preventDefault()">{{ i.name }}</a>
+          } @else {
+          <a [routerLink]="i.path" routerLinkActive="routerLinkActive" (click)="onOverflow(false)">
+            {{ i.name }}
+          </a>
+          }
+        </li>
+        }
+        <li>
+          <a routerLink="/pages/home"> American Chamber Commerce </a>
+        </li>
+
+        <li class="language" (click)="changeLanguage('en')">
+          <img src="{{ flagEn }}" alt="Flag English" />
+        </li>
+      </ul>
+    </nav>
+  </ng-container>
+</section>
+} @else {
+<!-- NAVBAR ESPAÑOL -->
+@if (isOverlay() === true) {
+<app-overlay-menu (handleChangeOverlay)="handleChangeOverlay()" />
+}
+<section class="navPc" [ngStyle]="{ transform: 'translateY(' + scrollPosition + 'px)' }">
+  <nav>
+    <div class="logo fadeIn">
+      <a routerLink="/pages/home">
+        <img src="/assets/webp/logo_blanco.webp" alt="Logo American Chamber Commerce" />
+      </a>
+    </div>
+
+    <ul class="fadeIn">
+      @for (i of navEs; track i.name) {
+      <li>
+        @if (!i.navigate) {
+        <a href="#" (click)="onOverflow(true); $event.preventDefault()">{{
+          i.name
+          }}</a>
+        } @else {
+        <a [routerLink]="i.path" routerLinkActive="routerLinkActive" (click)="onOverflow(false)">
+          {{ i.name }}
+        </a>
+        }
+      </li>
+      }
+
+      <li class="language" (click)="changeLanguage('es')">
+        <img src="{{ flagEs }}" alt="Flag Spanish" />
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<section class="navMobile" [class.open]="isMenuOpen">
+  <div class="menuMobile">
+    <div class="logo fadeIn">
+      <a routerLink="/pages/home">
+        <img src="/assets/webp/logo_blanco.webp" alt="Logo American Chamber Commerce" />
+      </a>
+    </div>
+
+    <div class="toggleMenu" (click)="toggleMenu()">
+      @if (isMenuOpen) {
+      <mat-icon class="fadeIn" fontIcon="close"></mat-icon>
+      } @else {
+      <mat-icon class="fadeIn" fontIcon="menu"></mat-icon>
+      }
+    </div>
+  </div>
+
+  <ng-container *ngIf="isMenuOpen === true">
+    <nav class="sidebar fadeIn">
+      <ul class="menuSidebar fadeIn">
+        @for (i of navEs; track i.name) {
+        <li (click)="toggleMenu()">
+          @if (!i.navigate) {
+          <a href="#" (click)="onOverflow(true); $event.preventDefault()">{{ i.name }}</a>
+          } @else {
+          <a [routerLink]="i.path" routerLinkActive="routerLinkActive" (click)="onOverflow(false)">
+            {{ i.name }}
+          </a>
+          }
+        </li>
+        }
+        <li>
+          <a routerLink="/pages/home"> American Chamber Commerce </a>
+        </li>
+
+        <li class="language" (click)="changeLanguage('es')">
+          <img src="{{ flagEs }}" alt="Flag Spanish" />
+        </li>
+      </ul>
+    </nav>
+  </ng-container>
+</section>
+}

@@ -1,0 +1,52 @@
+.alphabet {
+  margin-top: 2rem;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem;
+  border: 1px solid var(--color-primary);
+  border-radius: .3rem;
+  margin-top: .3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+
+  transition: all .2s ease;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: #fefefe;
+  }
+}
+
+.body {
+  padding: 1rem .5rem .5rem 1rem;
+  margin: .5rem 0 2rem 0;
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, .1);
+  border-radius: .3rem;
+  cursor: normal;
+
+  &:hover {
+    background: #fefefe;
+    cursor: copy;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555353;
+    line-height: 1.3rem;
+  }
+}
+
+img {
+  width: 100%;
+  height: 20px;
+}

@@ -1,0 +1,274 @@
+button {
+  // width: 100%;
+  height: auto;
+  max-height: 40px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botones button {
+  width: 100% !important;
+  height: auto;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease;
+  border: none;
+  padding: 0.5rem 1.5rem;
+}
+
+.btnValid {
+  background: var(--color-primary);
+  color: #fefefe;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--color-primary);
+    transform: scale(1.005) translateY(-1px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(1.01) translateY(-1px);
+  }
+}
+
+.btnValidBorder {
+  background: #fefefe;
+  color: var(--color-primary);
+  border-radius: 0.3rem;
+  text-align: center;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--color-primary-dark);
+    transform: scale(1.01) translateY(-1px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(1.01) translateY(-1px);
+  }
+}
+
+.btnInvalid {
+  background: var(--color-gray);
+  color: #c2c2c2;
+  cursor: pointer;
+  border-radius: 0.3rem;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #111;
+    transform: scale(1.005) translateY(-1px);
+    color: #fefefe;
+  }
+}
+
+// .btnInvalid:hover {
+//   background: #111;
+//   transform: scale(1.005) translateY(-1px);
+//   color: #fefefe;
+//   cursor: none;transition:all .2s ease;
+// }
+
+.btnCancelar {
+  background: none;
+  border: 1px solid var(--color-secondary);
+  border-radius: 0.3rem;
+  color: var(--color-secondary);
+  text-align: center;
+
+  mat-icon {
+    font-size: 1.2rem;
+    padding-top: 0.2rem;
+    margin-right: 0.5rem;
+  }
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--color-secondary);
+    transform: scale(1.005) translateY(-1px);
+    color: #fefefe;
+  }
+}
+
+.btnBorderWithIcon {
+  height: auto;
+  border-radius: 0.5rem !important;
+  background: transparent;
+  border: 1px solid var(--color-secondary);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--color-secondary);
+
+  mat-icon {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    display: block;
+  }
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fefefe;
+
+    .icon {
+      color: #fefefe;
+    }
+  }
+}
+
+// .btnCancelar:hover {
+//   background: var(--color-error);
+//   transform: scale(1.005) translateY(-1px);
+//   color: #fefefe;
+// }
+
+.btnWhatsapp {
+  a {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: #25d366;
+    color: #fefefe;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #25d366;
+      transform: scale(1.01) translateY(-1px);
+    }
+  }
+}
+
+// ========================
+.snackbarOk {
+  background-color: var(--color-secondary);
+  color: #fefefe;
+}
+
+.snackbar {
+  background-color: var(--color-primary);
+  color: #fefefe;
+}
+
+.btnSms {
+  background: var(--color-secondary);
+  color: #fefefe;
+  display: block;
+  text-align: center;
+  display: flex;
+  transition: all 0.2s ease;
+}
+
+.btnSms:hover {
+  background: var(--color-primary);
+  color: #fefefe;
+  transform: scale(1.01) translateY(-3px);
+}
+
+.loaderBtn {
+  padding-right: 0.5rem;
+}
+
+.loaderBtn mat-icon {
+  animation: rotateBtn 1s infinite linear;
+}
+
+@keyframes rotateBtn {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btnBuscar {
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+@media only screen and (max-width: 720px) {
+  .btnBuscar {
+    padding: 0 0.5rem 1.5rem 0;
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.btnNew {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  text-align: center;
+  background: var(--color-primary);
+  color: #fefefe;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: var(--color-primary-dark);
+  }
+}
+
+.btnError {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  text-align: center;
+  background: var(--color-gray);
+  color: #fefefe;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: var(--color-gray-dark);
+  }
+}
+
+.buttonsDialog {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.1rem 0;
+  margin: 0;
+}

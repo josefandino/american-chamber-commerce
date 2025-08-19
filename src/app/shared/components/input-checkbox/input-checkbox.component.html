@@ -1,0 +1,15 @@
+<div class="ckeck" (focusin)="onFocus()" (focusout)="onBlur()">
+    <mat-checkbox [formControl]="control" (change)="onChange($event)">{{ label }}</mat-checkbox>
+</div>
+
+
+
+<!-- 
+<mat-form-field appearance="outline">
+    <mat-label>{{ defaultValue? defaultValue: label }}</mat-label>
+    <mat-select [formControl]="control">
+      <mat-option *ngFor="let option of defaultOptions" [value]="option[value]">
+        {{ option[labelSelect] }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->

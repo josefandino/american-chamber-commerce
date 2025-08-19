@@ -1,0 +1,31 @@
+<mat-form-field appearance="outline" style="height: 100%;">
+
+  <mat-label>{{ label() }}</mat-label>
+
+  <textarea 
+    matInput 
+    [formControl]="control()" 
+    [maxlength]="maxLength()" 
+    (keyup)="limitInputLength($event)"
+  ></textarea>
+
+  <mat-hint align="end">{{ control().value?.length || 0 }} / {{ maxLength() }}</mat-hint> 
+
+    <mat-error *ngIf="control().hasError('required')">
+      {{ label() }} it is required
+    </mat-error> 
+  
+    <mat-error *ngIf="control().hasError('maxlength')">
+      {{ label() }} cannot have more than {{ maxLength() }} characters
+    </mat-error> 
+  
+    <mat-error *ngIf="control().hasError('minlength')">
+      {{ label() }} cannot have less than {{ minLength() }} characters
+    </mat-error> 
+    
+  @if (control().value && isClear() === true) {
+  <button style=" display: flex; align-items: center;" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</mat-form-field>

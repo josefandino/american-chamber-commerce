@@ -1,0 +1,74 @@
+.language {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .close {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+
+    svg {
+      transition: transform 0.5s ease-in-out;
+
+      &:hover {
+        animation: rotate .6s linear infinite;
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+  }
+
+  // .close svg {
+  //   transition: transform 0.5s ease-in-out; /* Suaviza la animación del giro */
+  // }
+
+  // .language:hover svg {
+  //   transform: rotate(360deg); /* Hace que gire en su eje */
+  // }
+
+  li {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: .2rem 1rem;
+    cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+
+    img {
+      width: 70px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+
+}

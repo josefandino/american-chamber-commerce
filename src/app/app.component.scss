@@ -1,0 +1,47 @@
+.loader {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background: rgba(36, 35, 42, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    object-fit: cover;
+  }
+
+}
+
+.goBackTop {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--color-primary);
+  color: #fefefe;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: .5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all .2s ease;
+
+  &:hover {
+    transform: scale(1.1) translateY(-3px);
+  }
+
+  &:active {
+    transform: scale(.8) translateY(3px);
+  }
+}
+
+.goBackTop img {
+  filter: invert(100%);
+}

@@ -1,0 +1,124 @@
+/* =========================================
+**** GRID 2
+========================================= */
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+
+  @media only screen and (max-width:786px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid2Form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+
+  @media only screen and (max-width:786px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid2-05 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .5rem;
+
+  @media only screen and (max-width:786px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+**** GRID 3
+========================================= */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+  @media only screen and (max-width: 920px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width:786px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
+  }
+}
+
+.grid3Form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+  @media only screen and (max-width:920px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width:786px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
+  }
+}
+
+
+
+/* =========================================
+**** GRID 4
+========================================= */
+.grid4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+@media only screen and (max-width:680px) {
+  .grid4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+@media only screen and (max-width:920px) {
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // .grid4 > :last-child {
+  //   grid-column: span 2;
+  // }
+}
+
+/* =========================================
+**** GRID 5
+========================================= */
+.grid5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+@media only screen and (max-width:680px) {
+  .grid5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+@media only screen and (max-width:920px) {
+  .grid5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width:1024px) {
+  .grid5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

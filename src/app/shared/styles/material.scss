@@ -1,0 +1,52 @@
+mat-form-field,
+mat-form-field .mat-form-field-wrapper,
+mat-form-field .mat-form-field-wrapper .mat-form-field-flex,
+mat-form-field .mat-form-field-wrapper .mat-form-field-infix,
+mat-form-field
+  .mat-form-field-wrapper
+  .mat-form-field-infix
+  .mat-input-element {
+  width: 100%;
+}
+
+mat-tab {
+  width: 100%;
+}
+
+// input {
+//   width: 100%;
+// }
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: var(--color-primary) !important;
+  font-size: 3rem !important;
+}
+
+.mat-mdc-snack-bar-container
+  .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+  color: #fefefe !important;
+}
+
+::ng-deep .mat-tab-label {
+  background-color: #f2f2f2; /* Color de fondo gris */
+  color: #333; /* Color del texto */
+}
+
+// ::ng-deep .mat-tab-label {
+//   background-color: #f2f2f2; /* Color de fondo gris */
+//   color: #333; /* Color del texto */
+// }
+
+// ::ng-deep .mat-tab-label {
+//   background-color: #790606 !important; /* Color de fondo gris */
+//   color: #333; /* Color del texto */
+// }
+
+// ::ng-deep .mat-tab-label:focus {
+//   border-bottom: 2px solid #ccc; /* Borde de color gris cuando el tab está activo */
+// }
+
+// mat-dialog-content {
+//   height: 100%;
+//   min-height: 87vh;
+// }

@@ -1,0 +1,59 @@
+/* =========================================
+**** TABLE STYLES
+========================================= */
+
+.tableWeks {
+  width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  padding: 0;
+  overflow-x: scroll;
+  border-radius: .3rem;
+  border-left: 1px solid #d6d6d6;
+  border-right: 1px solid #d6d6d6;
+
+
+  table {
+    width: 100%;
+    height: auto;
+  }
+
+  tr {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  thead tr th {
+    background: #cecece;
+    color: #222;
+    font-weight: 600;
+    padding: 1rem;
+    // border-bottom: 1px solid #b6b5b5;
+    border-right: 1px solid #b6b5b5;
+    // white-space: wrap;
+  }
+
+  tr,
+  td {
+    padding: .5rem 1rem;
+    border-bottom: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+    text-align: left;
+    font-size: 1rem;
+    color: #222;
+    text-wrap: pretty;
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    text-wrap: pretty;
+    font-size: 1rem;
+    color: #222;
+    line-height: 1.6rem;
+  }
+}

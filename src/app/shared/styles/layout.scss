@@ -1,0 +1,18 @@
+
+.layout {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px auto;
+  transition: all 0.5s ease;
+}
+
+.ctnBody {
+  width:100%;height:auto;
+  min-height: calc(100vh - 150px);
+}
+
+.sidebarHidden {
+  grid-template-columns: 0 auto;
+}

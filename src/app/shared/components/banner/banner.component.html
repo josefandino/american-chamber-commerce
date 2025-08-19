@@ -1,0 +1,6 @@
+<section
+  class="banner"
+  [ngStyle]="{ transform: 'translateY(' + scrollPosition + 'px)' }"
+>
+  <img loading="lazy" [src]="banner()" [alt]="alt()" />
+</section>

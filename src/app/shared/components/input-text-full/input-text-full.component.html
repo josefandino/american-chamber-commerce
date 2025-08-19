@@ -1,0 +1,30 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput 
+      [formControl]="control" 
+      [minLength]="minLength" 
+      [maxlength]="maxLength" 
+      (keypress)="limitInputLength($event)"
+      >
+      <!-- (keyup)="limitInputLength($event)" -->
+  
+  <!-- <mat-hint align="end">{{ control.value?.length || 0 }} / {{ maxLength }}</mat-hint> -->
+
+  <!-- <mat-error *ngIf="control.hasError('required')">
+    {{ label }} es requerido
+  </mat-error> -->
+
+  <!-- <mat-error *ngIf="control.hasError('maxlength')">
+    {{ label }} no puede tener más de {{ maxLength }} carácteres
+  </mat-error> -->
+
+  <!-- <mat-error *ngIf="control.hasError('minlength')">
+    {{ label }} no puede tener menos de {{ minLength }} carácteres
+  </mat-error> -->
+
+  @if (control.value && isClear === true) {
+  <button matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</mat-form-field>

@@ -1,0 +1,22 @@
+@defer {
+
+<!-- @if (showGoBackTopButton) {
+    <div class="goBackTop" (click)="goBackTop()">
+      <img src="../assets/icons/arrow_top.svg" alt="Go to back top American Chamber Commerce">
+    </div>
+  } -->
+
+<app-nav />
+
+<!-- <router-outlet></router-outlet> -->
+<router-outlet />
+<br>
+<br>
+<br>
+<app-footer />
+
+} @loading (after 100ms; minimum 1s) {
+<div class="loader">
+  <img alt="loading..." src="../assets/gif/loading.gif" />
+</div>
+}

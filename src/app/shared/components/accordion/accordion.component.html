@@ -1,0 +1,41 @@
+<div class="">
+  @for (accordion of accordionsData; track $index; let i = $index) {
+  <div class="accordion-item">
+
+    <div class="header" (click)="toggleAccordion(accordion, i)" (keydown)="onKeydown($event, accordion, i)"
+      tabindex="0">
+
+      <span>{{ accordion.title }}</span>
+      <mat-icon *ngIf="expandedAccordionIndex === i && accordion.expanded" fontIcon="keyboard_arrow_up"></mat-icon>
+      <mat-icon *ngIf="expandedAccordionIndex !== i || !accordion.expanded" fontIcon="keyboard_arrow_down"></mat-icon>
+    </div>
+
+    @if (accordion.expanded) {
+    <div class="body">
+
+      <ng-container *ngFor="let content of accordion.content">
+
+        <ng-container *ngIf="content.type === 'paragraph'">
+          <p *ngIf="content.text">{{ content.text }}</p>
+          <h2 *ngIf="content.title">{{ content.title | titlecase }}</h2>
+          <h3 *ngIf="content.titleBody">{{ content.titleBody | titlecase }}</h3>
+          <h5 *ngIf="content.bodyNote">{{ content.bodyNote | titlecase }}</h5>
+        </ng-container>
+
+        @if (content && content.type === 'list' && content.items && content.items.length > 0) {
+        <ul>
+          <li *ngFor="let item of content.items">{{ item }}</li>
+        </ul>
+        }
+
+        <div class="linksPath" *ngIf="content.type === 'path'">
+          <a *ngIf="content.pathUrl && content.linkText" [routerLink]="content.pathUrl">{{ content.linkText }}</a>
+        </div>
+
+      </ng-container>
+
+    </div>
+    }
+  </div>
+  }
+</div>

@@ -1,0 +1,20 @@
+
+<mat-form-field appearance="outline">
+  <mat-label>{{ label() }}</mat-label>
+
+  <input matInput 
+      [formControl]="control()" 
+      [minlength]="minLength()"
+      [maxlength]="maxLength()" 
+      (keydown)="onKeyDown($event)"
+      (input)="onInputChange()"
+      type="text"
+      inputmode="numeric"
+  >
+
+  @if (control().value && isClear()) {
+  <button matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</mat-form-field>
