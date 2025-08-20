@@ -7,6 +7,10 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/pages.routing').then((r) => r.PagesRouting),
   },
-
+  {
+    path: 'events',
+    loadChildren: () =>
+      import('./events/events.routing').then((r) => r.eventsRoutes),
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

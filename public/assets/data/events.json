@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "2025 Annual Gala",
+    "slug": "annual-gala",
+    "date": "2025-10-21",
+    "month": "Oct",
+    "day": "21",
+    "time": {
+      "start": "07:00 p.m.",
+      "end": "11:00 p.m.",
+      "timezone": "ET"
+    },
+    "location": {
+      "city": "New York City",
+      "venue": null,
+      "address": null
+    },
+    "language": "en",
+    "modality": "hybrid",
+    "event_type": "Gala",
+    "tickets": [],
+    "description": "Annual Gala event organized by Spain-US Chamber of Commerce. More details to be announced.",
+    "speakers": [],
+    "sponsors": [],
+    "cta": {
+      "label": "Register Now",
+      "url": "/events/annual-gala"
+    },
+    "image": "/media/events/annual-gala-banner.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Latin America, the United States, and Spain in the Global Economy Forum",
+    "slug": "global-economy-forum",
+    "date": "2025-09-24",
+    "month": "Sep",
+    "day": "24",
+    "time": {
+      "start": "08:00 a.m.",
+      "end": "01:00 p.m.",
+      "timezone": "ET"
+    },
+    "location": {
+      "city": "New York City",
+      "venue": "Instituto Cervantes",
+      "address": "211 East 49th Street, New York City"
+    },
+    "language": "es",
+    "modality": "in_person",
+    "event_type": "Forum",
+    "tickets": [
+      {
+        "type": "Socios",
+        "price": 100,
+        "currency": "USD"
+      },
+      {
+        "type": "No Socios",
+        "price": 200,
+        "currency": "USD"
+      }
+    ],
+    "description": "The forum will gather influential business leaders from Latin America, the United States, and Spain. Attendees will include top executives from the private sector, government officials, fund managers, financial analysts, journalists, and academics. The event offers a unique opportunity to explore key insights into the current economic landscape and future outlook of these three regions.\n\nKeynote address to be delivered by Carlos Cuerpo, Minister of Economy, Trade, and Business of Spain.\n\nFurther conference details will be coming soon.",
+    "speakers": [
+      {
+        "name": "Carlos Cuerpo",
+        "title": "Minister of Economy, Trade, and Business of Spain",
+        "organization": "Government of Spain",
+        "role": "Keynote Speaker",
+        "photo": "/media/speakers/carlos-cuerpo.jpg"
+      },
+      {
+        "name": "Jaime Muguiro",
+        "title": "CEO",
+        "organization": "CEMEX",
+        "photo": "/media/speakers/jaime-muguiro.jpg"
+      },
+      {
+        "name": "Daniel Muñiz",
+        "title": "Board Member",
+        "organization": "Brookfield Infrastructure Corporation",
+        "photo": "/media/speakers/daniel-muniz.jpg"
+      },
+      {
+        "name": "Javier Rodríguez Soler",
+        "title": "Head of Sustainability and CIB",
+        "organization": "BBVA",
+        "photo": "/media/speakers/javier-rodriguez-soler.jpg"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "Auxadi",
+        "logo": "/media/sponsors/auxadi.png"
+      },
+      {
+        "name": "BBVA",
+        "logo": "/media/sponsors/bbva.png"
+      },
+      {
+        "name": "DLA Piper",
+        "logo": "/media/sponsors/dla-piper.png"
+      }
+    ],
+    "cta": {
+      "label": "Regístrate",
+      "url": "/events/global-economy-forum"
+    },
+    "image": "/media/events/global-economy-forum-banner.jpg"
+  },
+  {
+    "id": 3,
+    "title": "First Gastronomic Excellence Awards",
+    "slug": "gastronomic-excellence-awards",
+    "date": "2025-09-10",
+    "month": "Sep",
+    "day": "10",
+    "time": {
+      "start": "06:00 p.m.",
+      "end": "10:00 p.m.",
+      "timezone": "ET"
+    },
+    "location": {
+      "city": "New York City",
+      "venue": null,
+      "address": null
+    },
+    "language": "en",
+    "modality": "in_person",
+    "event_type": "Awards",
+    "tickets": [],
+    "description": "First Gastronomic Excellence Awards recognizing innovation and leadership in the culinary industry.",
+    "speakers": [],
+    "sponsors": [],
+    "cta": {
+      "label": "Register Now",
+      "url": "/events/gastronomic-excellence-awards"
+    },
+    "image": "/media/events/gastronomic-awards-banner.jpg"
+  }
+]

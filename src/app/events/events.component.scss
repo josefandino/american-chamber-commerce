@@ -1,0 +1,56 @@
+.eventActions {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.selectYear {
+  border: 1px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fast,
+.next {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.2s ease;
+}
+
+.fast:hover,
+.next:hover {
+  transform: scale(1.01) translateY(-3px);
+  background: var(--color-primary);
+  color: #fefefe;
+}
+
+.active {
+  background: var(--color-primary);
+  color: #fefefe;
+}
+
+.events {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+.childEvent {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+  padding: 1rem;
+}

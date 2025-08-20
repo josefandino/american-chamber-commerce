@@ -1,1 +1,62 @@
-<p>events works!</p>
+<section class="pages">
+  <div class="content">
+    <h1 class="fadeIn">Nuestros Eventos</h1>
+    <div class="line fadeIn"></div>
+
+    <div class="eventActions fadeIn">
+      <div class="childEventActions">
+        <div class="selectYear">
+          <div
+            class="fast"
+            [class.active]="currentTimeFilter === 'upcoming'"
+            (click)="filterTime('upcoming')"
+          >
+            Próximos
+          </div>
+
+          <div
+            class="next"
+            [class.active]="currentTimeFilter === 'past'"
+            (click)="filterTime('past')"
+          >
+            Anteriores
+          </div>
+        </div>
+      </div>
+
+      <div class="childEventActions">
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo de evento</mat-label>
+          <mat-select (selectionChange)="filterEvents($event.value)">
+            <mat-option value="all">All</mat-option>
+            @for (item of allEvents$ | async; track $index) {
+              <hr />
+              <mat-option [value]="item.event_type">
+                {{ item.event_type }}
+              </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="events fadeIn">
+      @for (item of events$ | async; track $index) {
+        <div class="childEvent">
+          <div class="date">
+            <div class="childDate">
+              <span>{{ item.month }}</span>
+              <span>{{ item.day }}</span>
+            </div>
+          </div>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.location.city }}</p>
+          <p>{{ item.modality }}</p>
+          <p>{{ item.event_type }}</p>
+          <p>{{ item.cta.label }}</p>
+        </div>
+      }
+    </div>
+    <!--Fin eventos  -->
+  </div>
+</section>
