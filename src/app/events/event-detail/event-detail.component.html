@@ -25,10 +25,20 @@
         <span>{{ event.location.city }}</span>
       </div>
 
-      <p><strong>Date:</strong> {{ event.date | date }}</p>
-      <p><strong>City:</strong> {{ event.location.city }}</p>
-      <p><strong>Modality:</strong> {{ event.modality }}</p>
-      <p><strong>Type:</strong> {{ event.event_type }}</p>
+      <div class="iconText">
+        <mat-icon fontIcon="calendar_today"></mat-icon>
+        <span>{{ event.date | date }}</span>
+      </div>
+
+      <div class="iconText">
+        <mat-icon fontIcon="check_circle"></mat-icon>
+        <span>{{ event.modality }}</span>
+      </div>
+
+      <div class="iconText">
+        <mat-icon fontIcon="indeterminate_check_box"></mat-icon>
+        <span>{{ event.event_type }}</span>
+      </div>
 
       @if (existSpeakers.length > 0) {
         <h3>Speakers</h3>
@@ -47,6 +57,8 @@
           }
         </ul>
       }
+
+      <app-register-event />
     </div>
   </section>
 } @else {

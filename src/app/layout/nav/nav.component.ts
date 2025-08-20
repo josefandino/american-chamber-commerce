@@ -44,7 +44,7 @@ export class NavComponent {
     {
       name: 'Services',
       path: '/services',
-      navigate: false,
+      navigate: true,
     },
     {
       name: 'Events',
@@ -82,7 +82,7 @@ export class NavComponent {
     {
       name: 'Servicios',
       path: '/services',
-      navigate: false,
+      navigate: true,
     },
     {
       name: 'Eventos',

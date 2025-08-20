@@ -3,4 +3,5 @@ export const environment = {
   // apiUrl: 'https://myapp.com/api/v1',
   api_url: 'http://myapp.test',
   urlEvents: '/assets/data/events.json',
+  urlMemberships: '/assets/data/memberships.json',
 };

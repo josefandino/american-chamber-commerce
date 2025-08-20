@@ -13,10 +13,11 @@ import { EventsService } from '../events.service';
 import { EventsI } from '../interface.events';
 import { MatIcon } from '@angular/material/icon';
 import { AngularModule } from '@shared/modules';
+import { RegisterEventComponent } from '../register-event/register-event.component';
 
 @Component({
   selector: 'app-event-detail',
-  imports: [AngularModule, MatIcon],
+  imports: [AngularModule, MatIcon, RegisterEventComponent],
   templateUrl: './event-detail.component.html',
   styleUrl: './event-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

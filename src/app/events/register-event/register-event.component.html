@@ -1,0 +1,112 @@
+<!-- <app-banner class="fadeIn" [banner]="flyer" [alt]="alt" /> -->
+
+<h2>{{ labelsNames().title }}</h2>
+<div class="line"></div>
+<form [formGroup]="contactForm">
+  <div class="grid2Form">
+    <app-input-text
+      [label]="labelsNames().first_name"
+      [control]="getControl('first_name')"
+      (clearField)="clearField('first_name')"
+      [minLength]="3"
+      [maxLength]="60"
+    />
+
+    <app-input-text
+      [label]="labelsNames().last_name"
+      [control]="getControl('last_name')"
+      (clearField)="clearField('last_name')"
+      [minLength]="3"
+      [maxLength]="60"
+    />
+
+    <app-input-phone
+      [label]="labelsNames().phone"
+      [control]="getControl('phone')"
+      (clearField)="clearField('phone')"
+      [minLength]="5"
+      [maxLength]="20"
+    />
+
+    <app-input-email
+      label="Email"
+      [control]="getControl('email')"
+      (clearField)="clearField('email')"
+      [maxLength]="30"
+    />
+
+    <!-- <app-input-text
+      [label]="labelsNames().subject"
+      [control]="getControl('subject')"
+      (clearField)="clearField('subject')"
+      [minLength]="3"
+      [maxLength]="60"
+    /> -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>¿Es socio?</mat-label>
+      <mat-select formControlName="isSocio">
+        <mat-option value="false">No</mat-option>
+        <hr />
+        <mat-option value="true">Sí</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    @if (contactForm.get('isSocio')?.value === 'true') {
+      <app-input-text
+        [label]="labelsNames().numberSocio"
+        [control]="getControl('numberSocio')"
+        (clearField)="clearField('numberSocio')"
+        [minLength]="10"
+        [maxLength]="20"
+      />
+    }
+
+    <mat-form-field appearance="outline">
+      <mat-label>Número de entradas</mat-label>
+      <mat-select formControlName="numberEntradas">
+        <mat-option value="1">1</mat-option>
+        <hr />
+        <mat-option value="2">2</mat-option>
+        <hr />
+        <mat-option value="3">3</mat-option>
+        <hr />
+        <mat-option value="4">4</mat-option>
+        <hr />
+        <mat-option value="5">5</mat-option>
+        <hr />
+        <mat-option value="6">6</mat-option>
+        <hr />
+        <mat-option value="7">7</mat-option>
+        <hr />
+        <mat-option value="8">8</mat-option>
+        <hr />
+        <mat-option value="9">9</mat-option>
+        <hr />
+        <mat-option value="10">10</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- <div class="mt-2">
+    <app-input-textarea
+      [label]="labelsNames().message"
+      [control]="getControl('message')"
+      (clearField)="clearField('message')"
+      [minLength]="10"
+      [maxLength]="240"
+    />
+  </div> -->
+</form>
+
+<div class="boxBtnsEnd">
+  @if (contactForm.valid) {
+    <div class="btnValid" (click)="validarForm()">
+      {{ labelsNames().send }}
+    </div>
+  } @else {
+    <div class="btnError" (click)="formLoginInvalid()">
+      {{ labelsNames().send }}
+    </div>
+  }
+</div>
