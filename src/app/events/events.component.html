@@ -3,24 +3,22 @@
     <h1 class="fadeIn">Nuestros Eventos</h1>
     <div class="line fadeIn"></div>
 
-    <div class="eventActions fadeIn mt-2">
-      <div class="childEventActions">
-        <div class="selectYear">
-          <div
-            class="fast"
-            [class.active]="currentTimeFilter === 'upcoming'"
-            (click)="filterTime('upcoming')"
-          >
-            Próximos
-          </div>
+    <div class="eventActions fadeIn">
+      <div class="selectYear">
+        <div
+          class="fast"
+          [class.active]="currentTimeFilter === 'upcoming'"
+          (click)="filterTime('upcoming')"
+        >
+          Próximos
+        </div>
 
-          <div
-            class="next"
-            [class.active]="currentTimeFilter === 'past'"
-            (click)="filterTime('past')"
-          >
-            Anteriores
-          </div>
+        <div
+          class="next"
+          [class.active]="currentTimeFilter === 'past'"
+          (click)="filterTime('past')"
+        >
+          Anteriores
         </div>
       </div>
 

@@ -1,9 +1,10 @@
 .eventActions {
   width: 100%;
   height: auto;
+  padding: 0;
+  margin-top: 3rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   @media only screen and (max-width: 600px) {
     flex-direction: column;
@@ -12,6 +13,7 @@
 }
 
 .selectYear {
+  height: 60px;
   border: 1px solid var(--color-primary);
   padding: 0.5rem 1rem;
   border-radius: 2rem;
