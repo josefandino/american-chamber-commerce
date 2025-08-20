@@ -1,9 +1,9 @@
-<section class="pages">
-  <div class="content">
+<section class="pages mt-2">
+  <div class="content mt-2">
     <h1 class="fadeIn">Nuestros Eventos</h1>
     <div class="line fadeIn"></div>
 
-    <div class="eventActions fadeIn">
+    <div class="eventActions fadeIn mt-2">
       <div class="childEventActions">
         <div class="selectYear">
           <div
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="childEventActions">
+      <div class="childEventActions fadeIn">
         <mat-form-field appearance="outline">
           <mat-label>Tipo de evento</mat-label>
           <mat-select (selectionChange)="filterEvents($event.value)">
@@ -40,20 +40,36 @@
       </div>
     </div>
 
-    <div class="events fadeIn">
+    <div class="events fadeIn mt-2">
       @for (item of events$ | async; track $index) {
         <div class="childEvent">
-          <div class="date">
-            <div class="childDate">
-              <span>{{ item.month }}</span>
-              <span>{{ item.day }}</span>
+          <div>
+            <div class="date">
+              <div class="childDate">
+                {{ item.event_type }}
+              </div>
+              <div class="childDate">
+                <span>{{ item.month }}</span>
+                <span>{{ item.day }}</span>
+              </div>
+            </div>
+
+            <div class="location">
+              <mat-icon fontIcon="location_on"></mat-icon>
+              {{ item.location.city }}
+            </div>
+
+            <h2>{{ item.title }}</h2>
+
+            <div class="modality mt-2">
+              <mat-icon fontIcon="check_circle"></mat-icon>
+              <span>{{ item.modality }}</span>
             </div>
           </div>
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.location.city }}</p>
-          <p>{{ item.modality }}</p>
-          <p>{{ item.event_type }}</p>
-          <p>{{ item.cta.label }}</p>
+
+          <div class="btnValid mt-2">
+            <span>{{ item.cta.label }}</span>
+          </div>
         </div>
       }
     </div>

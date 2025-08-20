@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 
 import { EventsService } from './events.service';
 import { EventsI } from './interface.events';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-events',
@@ -22,6 +23,7 @@ import { EventsI } from './interface.events';
     MatFormField,
     MatInputModule,
     MatSelect,
+    MatIcon,
   ],
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss',
