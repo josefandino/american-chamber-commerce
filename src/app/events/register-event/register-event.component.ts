@@ -28,7 +28,6 @@ import { LanguageService } from '@shared/services/language.service';
 import { InputEmailComponent } from '@shared/components/input-email/input-email.component';
 import { InputPhoneComponent } from '@shared/components/input-phone/input-phone.component';
 import { InputTextComponent } from '@shared/components/input-text/input-text.component';
-import { InputTextareaComponent } from '@shared/components/input-textarea/input-textarea.component';
 
 @Component({
   selector: 'app-register-event',
@@ -38,7 +37,6 @@ import { InputTextareaComponent } from '@shared/components/input-textarea/input-
     InputTextComponent,
     InputEmailComponent,
     InputPhoneComponent,
-    InputTextareaComponent,
   ],
   templateUrl: './register-event.component.html',
   styleUrl: './register-event.component.scss',
