@@ -1,0 +1,162 @@
+.d-flex {
+  display: flex;
+}
+.d-flex-center {
+  display: flex;
+  align-items: center;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.justify-content-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+.align-content-center {
+  align-content: center;
+}
+.align-content-start {
+  align-content: flex-start;
+}
+.align-content-end {
+  align-content: flex-end;
+}
+.align-content-between {
+  align-content: space-between;
+}
+.align-content-around {
+  align-content: space-around;
+}
+.align-content-stretch {
+  align-content: stretch;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.flex-grow-0 {
+  flex-grow: 0;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.flex-shrink-1 {
+  flex-shrink: 1;
+}
+.flex-basis-auto {
+  flex-basis: auto;
+}
+.flex-basis-100 {
+  flex-basis: 100%;
+}
+.flex-basis-200 {
+  flex-basis: 200px;
+}
+.flex-basis-300 {
+  flex-basis: 300px;
+}
+.flex-basis-400 {
+  flex-basis: 400px;
+}
+.flex-basis-500 {
+  flex-basis: 500px;
+}
+.flex-basis-600 {
+  flex-basis: 600px;
+}
+.flex-basis-700 {
+  flex-basis: 700px;
+}
+.flex-basis-800 {
+  flex-basis: 800px;
+}
+.flex-basis-900 {
+  flex-basis: 900px;
+}
+.flex-basis-1000 {
+  flex-basis: 1000px;
+}
+.flex-basis-1100 {
+  flex-basis: 1100px;
+}
+.flex-basis-1200 {
+  flex-basis: 1200px;
+}
+.flex-basis-1300 {
+  flex-basis: 1300px;
+}
+.flex-basis-1400 {
+  flex-basis: 1400px;
+}
+.flex-basis-1500 {
+  flex-basis: 1500px;
+}
+.flex-basis-1600 {
+  flex-basis: 1600px;
+}
+.flex-basis-1700 {
+  flex-basis: 1700px;
+}
+.flex-basis-1800 {
+  flex-basis: 1800px;
+}
+.flex-basis-1900 {
+  flex-basis: 1900px;
+}
+.flex-basis-2000 {
+  flex-basis: 2000px;
+}
+.flex-basis-2100 {
+  flex-basis: 2100px;
+}
+.flex-basis-2200 {
+  flex-basis: 2200px;
+}

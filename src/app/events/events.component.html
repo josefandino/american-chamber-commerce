@@ -46,26 +46,29 @@
               <div class="childDate">
                 {{ item.event_type }}
               </div>
-              <div class="childDate">
-                <span>{{ item.month }}</span>
-                <span>{{ item.day }}</span>
+              <div class="calendar d-flex-center">
+                <mat-icon fontIcon="calendar_today"></mat-icon>
+                <div class="flex-column-center">
+                  <span>{{ item.month }}</span>
+                  <span>{{ item.day }}</span>
+                </div>
               </div>
-            </div>
-
-            <div class="location">
-              <mat-icon fontIcon="location_on"></mat-icon>
-              {{ item.location.city }}
             </div>
 
             <h2>{{ item.title }}</h2>
 
-            <div class="modality mt-2">
+            <div class="iconText">
+              <mat-icon fontIcon="location_on"></mat-icon>
+              <span>{{ item.location.city }}</span>
+            </div>
+
+            <div class="iconText">
               <mat-icon fontIcon="check_circle"></mat-icon>
               <span>{{ item.modality }}</span>
             </div>
           </div>
 
-          <div class="btnValid mt-2">
+          <div class="btnValid mt-2" (click)="eventDetail(item.id, item.slug)">
             <span>{{ item.cta.label }}</span>
           </div>
         </div>

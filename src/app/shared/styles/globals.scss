@@ -344,3 +344,25 @@ img {
     text-wrap: pretty;
   }
 }
+
+.iconText {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    color: var(--color-gray);
+    font-size: 2rem;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    margin-right: 0.5rem;
+  }
+
+  span {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--color-gray);
+  }
+}

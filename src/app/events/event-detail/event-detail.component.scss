@@ -1,0 +1,41 @@
+.goBack {
+  border: 1px solid var(--color-primary);
+  border-radius: 2rem;
+  width: 220px;
+  transition: all 0.2s ease;
+
+  mat-icon {
+    font-size: 2rem;
+    width: auto;
+    height: auto;
+    color: var(--color-primary);
+  }
+  span {
+    font-size: 1.4rem;
+  }
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+
+  &:hover {
+    background-color: var(--color-gray);
+    color: #fefefe;
+  }
+}
+.bannerDetail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+  }
+}

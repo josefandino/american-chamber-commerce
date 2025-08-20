@@ -1,0 +1,54 @@
+@let event = event$ | async;
+
+@if (event) {
+  @let existSpeakers = event?.speakers ?? [];
+  @let existSponsors = event?.sponsors ?? [];
+  <section class="pages">
+    <div class="content">
+      <div class="goBack justify-content-center">
+        <a class="d-flex-center" routerLink="/events">
+          <mat-icon fontIcon="arrow_back"></mat-icon>
+          <span> Back to Events</span>
+        </a>
+      </div>
+
+      <div class="bannerDetail mt-2">
+        <img src="./assets/jpg/img-event.jpeg" alt="Event Image" />
+      </div>
+
+      <h2>{{ event.title }}</h2>
+      <div class="line"></div>
+      <p><strong></strong> {{ event.description }}</p>
+
+      <div class="iconText">
+        <mat-icon fontIcon="location_on"></mat-icon>
+        <span>{{ event.location.city }}</span>
+      </div>
+
+      <p><strong>Date:</strong> {{ event.date | date }}</p>
+      <p><strong>City:</strong> {{ event.location.city }}</p>
+      <p><strong>Modality:</strong> {{ event.modality }}</p>
+      <p><strong>Type:</strong> {{ event.event_type }}</p>
+
+      @if (existSpeakers.length > 0) {
+        <h3>Speakers</h3>
+        <ul>
+          @for (s of existSpeakers; track $index) {
+            <li>{{ s.name }} – {{ s.organization }}</li>
+          }
+        </ul>
+      }
+
+      @if (existSponsors.length > 0) {
+        <h3>Sponsors</h3>
+        <ul>
+          @for (sp of existSponsors; track $index) {
+            <li>{{ sp.name }}</li>
+          }
+        </ul>
+      }
+    </div>
+  </section>
+} @else {
+  <p>Loading event details...</p>
+}
