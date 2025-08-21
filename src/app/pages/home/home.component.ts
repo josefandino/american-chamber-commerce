@@ -19,7 +19,7 @@ import { EnHomeComponent } from './en-home/en-home.component';
   selector: 'app-home',
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AngularModule, MaterialModule, EsHomeComponent, EnHomeComponent]
+  imports: [AngularModule, MaterialModule, EsHomeComponent, EnHomeComponent],
 })
 export default class HomeComponent implements OnInit {
   private localLanguage = localStorage.getItem('language');
@@ -31,7 +31,7 @@ export default class HomeComponent implements OnInit {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'en');
+    this.language.set(this.localLanguage || 'es');
   }
 
   ngOnInit() {

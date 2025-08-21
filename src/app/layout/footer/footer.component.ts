@@ -27,7 +27,7 @@ export class FooterComponent {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'en');
+    this.language.set(this.localLanguage || 'es');
   }
 
   ngOnInit() {

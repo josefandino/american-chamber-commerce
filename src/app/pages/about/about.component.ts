@@ -6,10 +6,10 @@ import EnAboutComponent from './en-about/about.component';
 import EsAboutComponent from './es-about/about.component';
 
 @Component({
-    selector: 'app-about',
-    imports: [EnAboutComponent, EsAboutComponent],
-    templateUrl: './about.component.html',
-    styleUrl: './about.component.scss'
+  selector: 'app-about',
+  imports: [EnAboutComponent, EsAboutComponent],
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss',
 })
 export default class AboutComponent implements OnInit {
   private localLanguage = localStorage.getItem('language');
@@ -21,7 +21,7 @@ export default class AboutComponent implements OnInit {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'en');
+    this.language.set(this.localLanguage || 'es');
   }
 
   ngOnInit() {

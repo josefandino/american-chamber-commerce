@@ -39,7 +39,7 @@ export class OverlayMenuComponent implements OnInit {
   // private readonly _programsSvc = inject(ProgramsService);
 
   constructor() {
-    this.language.set(this.localLanguage || 'en');
+    this.language.set(this.localLanguage || 'es');
   }
 
   ngOnInit(): void {

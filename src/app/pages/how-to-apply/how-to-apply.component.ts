@@ -7,20 +7,25 @@ import {
 } from '@angular/core';
 
 import { AngularModule, MaterialModule } from '@shared/modules';
-import { EnHowToApplyComponent } from "./en-how-to-apply/en-how-to-apply.component";
-import { EsHowToApplyComponent } from "./es-how-to-apply/es-how-to-apply.component";
+import { EnHowToApplyComponent } from './en-how-to-apply/en-how-to-apply.component';
+import { EsHowToApplyComponent } from './es-how-to-apply/es-how-to-apply.component';
 import { LanguageService } from '@shared/services/language.service';
 import { UnsubscribeSubject } from '@shared/models/global.interface';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-how-to-apply',
-  imports: [AngularModule, MaterialModule, EnHowToApplyComponent, EsHowToApplyComponent],
+  imports: [
+    AngularModule,
+    MaterialModule,
+    EnHowToApplyComponent,
+    EsHowToApplyComponent,
+  ],
   templateUrl: './how-to-apply.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HowToApplyComponent {
-   private localLanguage = localStorage.getItem('language');
+  private localLanguage = localStorage.getItem('language');
 
   public language = signal<string>('en');
 
@@ -29,7 +34,7 @@ export class HowToApplyComponent {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'en');
+    this.language.set(this.localLanguage || 'es');
   }
 
   ngOnInit() {
