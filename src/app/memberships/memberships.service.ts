@@ -2,7 +2,7 @@ import { HttpClient, HttpResponseBase } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from 'environments/environment.prod';
 import { Observable, take, tap, catchError, map } from 'rxjs';
-import { MembershipI, MembershipResponse } from './memberships.interface';
+import { MembershipsI } from './memberships.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -24,12 +24,12 @@ export class MembershipsService {
   //   );
   // }
 
-  public getMemberships(): Observable<MembershipResponse> {
+  public getMemberships(): Observable<MembershipsI> {
     const url = `${this.urlMemberships}`;
 
-    return this._http.get<MembershipResponse>(url).pipe(
+    return this._http.get<MembershipsI>(url).pipe(
       take(1),
-      tap((resp: MembershipResponse) => resp),
+      tap((resp: MembershipsI) => resp),
       catchError((err: HttpResponseBase) => {
         throw err;
       }),

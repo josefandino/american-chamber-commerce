@@ -1,0 +1,111 @@
+.memberships {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 500px 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+
+  @media only screen and (max-width: 1280px) {
+    grid-template-columns: 300px 1fr 1fr 1fr 1fr;
+  }
+}
+
+.membershipHeaderLine {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  p {
+    font-size: 2rem;
+    color: var(--color-slate-500);
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+  }
+}
+.membershipHeader {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--color-blue-800);
+  color: var(--color-yellow-500);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  p {
+    font-size: 2rem;
+    color: var(--color-yellow-500);
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+  }
+  span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-yellow-300);
+  }
+}
+
+.bodyWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.bodyContent {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 500px 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+
+  &:nth-child(odd) {
+    background: var(--color-slate-200);
+  }
+
+  @media only screen and (max-width: 1280px) {
+    grid-template-columns: 300px 1fr 1fr 1fr 1fr;
+  }
+}
+
+.contentText {
+  width: 100%;
+  height: auto;
+  padding: 0.2rem 0.5rem;
+  span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-slate-500);
+    text-wrap: balance;
+  }
+}
+
+.benefitsTrue {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    color: var(--color-green-500);
+  }
+}
+
+.benefitsFalse {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    color: var(--color-red-500);
+  }
+}

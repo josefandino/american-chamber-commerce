@@ -1,40 +1,60 @@
-export interface MembershipResponse {
-  memberships: MembershipI[];
-  notes: NotesI;
+export interface MembershipsI {
+  memberships: Membership[];
+  notes: Notes;
 }
 
-export interface MembershipI {
+export interface Membership {
   category: string;
-  price_usd: number | null;
+  price_usd: number;
   currency: string;
   billing_cycle: string;
   cta_label: string;
-  benefits: BenefitsI;
+  type: string;
+  benefits?: Benefits;
 }
 
-export interface BenefitsI {
-  publications_access: boolean;
-  job_portal_access: boolean;
+export interface Benefits {
+  publications_access: string;
+  publications_access_bool: boolean;
+  job_portal_access: string;
+  job_portal_access_bool: boolean;
   visa_processing_priority: string;
+  visa_processing_priority_bool: boolean;
   offers_discounts: string;
-  fda_advisory: boolean;
+  offers_discounts_bool: boolean;
+  fda_advisory: string;
+  fda_advisory_bool: boolean;
   event_invitations: string;
+  event_invitations_bool: boolean;
   service_discounts: string;
+  service_discounts_bool: boolean;
   newsletter_announcements: string;
+  newsletter_announcements_bool: boolean;
   business_promotion: string;
-  event_guests_allowed: number;
+  business_promotion_bool: boolean;
+  event_guests_allowed: string;
+  event_guests_allowed_bool: number;
   logo_webpage: string;
-  vip_invitations: boolean | string;
-  newsletter_publications: boolean | string;
-  email_marketing_service: boolean | string;
+  logo_webpage_bool: boolean;
+  vip_invitations: string;
+  vip_invitations_bool: boolean;
+  newsletter_publications: string;
+  newsletter_publications_bool: boolean;
+  email_marketing_service: string;
+  email_marketing_service_bool: boolean;
   office_space_access: string;
-  annual_meeting_invitation: boolean;
-  custom_webinars: boolean;
-  annual_gala_access: boolean | string;
-  event_participation: boolean;
+  office_space_access_bool: boolean;
+  annual_meeting_invitation: string;
+  annual_meeting_invitation_bool: boolean;
+  custom_webinars: string;
+  custom_webinars_bool: boolean;
+  annual_gala_access: string;
+  annual_gala_access_bool: boolean;
+  event_participation: string;
+  event_participation_bool: boolean;
 }
 
-export interface NotesI {
+export interface Notes {
   disclaimer: string;
   event_invitations: string;
   office_space: string;

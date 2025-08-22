@@ -7,30 +7,33 @@ import {
 } from '@angular/core';
 import { Subject, catchError, takeUntil } from 'rxjs';
 import { MembershipsService } from './memberships.service';
-import { AngularModule } from '@shared/modules';
+import { AngularModule, MaterialModule } from '@shared/modules';
 
 @Component({
   selector: 'app-memberships',
-  imports: [AngularModule],
+  imports: [AngularModule, MaterialModule],
   templateUrl: './memberships.component.html',
   styleUrl: './memberships.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MembershipsComponent implements OnDestroy {
+export class MembershipsComponent {
   private readonly _membershipsService = inject(MembershipsService);
-  private unsubscribeAll: Subject<any> = new Subject();
 
   public memberships$ = this._membershipsService.getMemberships();
 
-  // public memberships$ = this._membershipsService.getMemberships().pipe(
-  //   catchError((err: HttpResponseBase) => {
-  //     throw err;
-  //   }),
-  //   takeUntil(this.unsubscribeAll),
-  // );
+  public formatBenefits(benefits: any) {
+    const result: { label: string; active: boolean }[] = [];
 
-  ngOnDestroy(): void {
-    this.unsubscribeAll.next(null);
-    this.unsubscribeAll.complete();
+    for (const key of Object.keys(benefits)) {
+      if (key.endsWith('_bool')) {
+        const baseKey = key.replace('_bool', '');
+        result.push({
+          label: benefits[baseKey], // el texto descriptivo
+          active: Boolean(benefits[key]), // true/false o número > 0
+        });
+      }
+    }
+
+    return result;
   }
 }
