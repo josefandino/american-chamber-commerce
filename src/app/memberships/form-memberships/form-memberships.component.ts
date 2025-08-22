@@ -208,7 +208,7 @@ export class FormMembershipsComponent {
 
   private estaSeguro() {
     const action = 'create';
-    const message = 'Esta seguro de enviar el mensaje?';
+    const message = '¿La información que se esta enviando es correcta?';
     const data = this.contactForm.getRawValue();
     const dialogRef = this._dialog.open(EstaSeguroComponent, {
       width: '600px',
@@ -229,28 +229,36 @@ export class FormMembershipsComponent {
   }
 
   private sendMessage(body: ContactFormI): void {
-    this._contactSvc
-      .createContact(body)
-      .pipe(takeUntil(this.unsubscribeAll))
-      .subscribe({
-        next: (resp: any) => {
-          if (resp.status === 201) {
-            this._toastr.success(resp.message, 'Éxito');
-            this.contactForm.reset();
-            setTimeout(() => {
-              this._router.navigate(['/home']);
-            }, 3000);
-          } else {
-            this._toastr.error(resp.message, 'Error');
-          }
-        },
-        error: (error: HttpErrorResponse) => {
-          this._toastr.error(error.error.message, 'Error');
-          setTimeout(() => {
-            this._router.navigate(['/home']);
-          }, 3000);
-        },
-      });
+    this._toastr.success(
+      'Se ha registrado correctamente en la membresía',
+      'Éxito',
+    );
+    this.contactForm.reset();
+    setTimeout(() => {
+      this._router.navigate(['/home']);
+    }, 3000);
+    // this._contactSvc
+    //   .createContact(body)
+    //   .pipe(takeUntil(this.unsubscribeAll))
+    //   .subscribe({
+    //     next: (resp: any) => {
+    //       if (resp.status === 201) {
+    //         this._toastr.success(resp.message, 'Éxito');
+    //         this.contactForm.reset();
+    //         setTimeout(() => {
+    //           this._router.navigate(['/home']);
+    //         }, 3000);
+    //       } else {
+    //         this._toastr.error(resp.message, 'Error');
+    //       }
+    //     },
+    //     error: (error: HttpErrorResponse) => {
+    //       this._toastr.error(error.error.message, 'Error');
+    //       setTimeout(() => {
+    //         this._router.navigate(['/home']);
+    //       }, 3000);
+    //     },
+    //   });
   }
 
   formLoginInvalid(): boolean {

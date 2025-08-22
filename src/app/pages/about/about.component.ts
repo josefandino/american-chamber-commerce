@@ -7,7 +7,7 @@ import EsAboutComponent from './es-about/about.component';
 
 @Component({
   selector: 'app-about',
-  imports: [EnAboutComponent, EsAboutComponent],
+  imports: [EsAboutComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })

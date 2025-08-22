@@ -19,7 +19,7 @@ import { EnHomeComponent } from './en-home/en-home.component';
   selector: 'app-home',
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AngularModule, MaterialModule, EsHomeComponent, EnHomeComponent],
+  imports: [AngularModule, MaterialModule, EsHomeComponent],
 })
 export default class HomeComponent implements OnInit {
   private localLanguage = localStorage.getItem('language');
