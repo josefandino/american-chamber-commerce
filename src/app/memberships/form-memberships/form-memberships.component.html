@@ -1,0 +1,142 @@
+<!-- <app-banner class="fadeIn" [banner]="flyer" [alt]="alt" /> -->
+
+<main class="pages">
+  <div class="content">
+    <h2>{{ labelsNames().title }}</h2>
+    <div class="line"></div>
+    <form [formGroup]="contactForm">
+      <div class="grid2Form">
+        <app-input-text
+          [label]="labelsNames().first_name"
+          [control]="getControl('first_name')"
+          (clearField)="clearField('first_name')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-text
+          [label]="labelsNames().last_name"
+          [control]="getControl('last_name')"
+          (clearField)="clearField('last_name')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-phone
+          [label]="labelsNames().phone"
+          [control]="getControl('phone')"
+          (clearField)="clearField('phone')"
+          [minLength]="5"
+          [maxLength]="20"
+        />
+
+        <app-input-email
+          label="Email"
+          [control]="getControl('email')"
+          (clearField)="clearField('email')"
+          [maxLength]="30"
+        />
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ labelsNames().category }}</mat-label>
+          <mat-select formControlName="category">
+            <mat-option value="silver">Silver</mat-option>
+            <hr />
+            <mat-option value="gold">Gold</mat-option>
+            <hr />
+            <mat-option value="platinum">Platinum</mat-option>
+            <hr />
+            <mat-option value="diamond">Diamond</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <h2>{{ labelsNames().name_company }}</h2>
+      <div class="grid2Form">
+        <app-input-text
+          [label]="labelsNames().name_company"
+          [control]="getControl('name_company')"
+          (clearField)="clearField('name_company')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-text
+          [label]="labelsNames().address"
+          [control]="getControl('address')"
+          (clearField)="clearField('address')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-text
+          [label]="labelsNames().city"
+          [control]="getControl('city')"
+          (clearField)="clearField('city')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-text
+          [label]="labelsNames().state"
+          [control]="getControl('state')"
+          (clearField)="clearField('state')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-text
+          [label]="labelsNames().zip_code"
+          [control]="getControl('zip_code')"
+          (clearField)="clearField('zip_code')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-text
+          [label]="labelsNames().country"
+          [control]="getControl('country')"
+          (clearField)="clearField('country')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+        <app-input-text
+          [label]="labelsNames().sector"
+          [control]="getControl('sector')"
+          (clearField)="clearField('sector')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+
+        <app-input-text
+          [label]="labelsNames().website"
+          [control]="getControl('website')"
+          (clearField)="clearField('website')"
+          [minLength]="3"
+          [maxLength]="60"
+        />
+      </div>
+      <div class="grid1Form mt-2">
+        <app-input-textarea
+          [label]="labelsNames().description"
+          [control]="getControl('description')"
+          (clearField)="clearField('description')"
+          [minLength]="3"
+          [maxLength]="20"
+        />
+      </div>
+    </form>
+
+    <div class="boxBtnsEnd">
+      @if (contactForm.valid) {
+        <div class="btnValid" (click)="validarForm()">
+          {{ labelsNames().send }}
+        </div>
+      } @else {
+        <div class="btnError" (click)="formLoginInvalid()">
+          {{ labelsNames().send }}
+        </div>
+      }
+    </div>
+  </div>
+</main>

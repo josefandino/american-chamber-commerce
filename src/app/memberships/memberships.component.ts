@@ -8,10 +8,11 @@ import {
 import { Subject, catchError, takeUntil } from 'rxjs';
 import { MembershipsService } from './memberships.service';
 import { AngularModule, MaterialModule } from '@shared/modules';
+import { FormMembershipsComponent } from './form-memberships/form-memberships.component';
 
 @Component({
   selector: 'app-memberships',
-  imports: [AngularModule, MaterialModule],
+  imports: [AngularModule, MaterialModule, FormMembershipsComponent],
   templateUrl: './memberships.component.html',
   styleUrl: './memberships.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
