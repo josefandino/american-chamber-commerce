@@ -114,8 +114,8 @@ export class NavComponent {
 
   public isOverlay = signal<boolean>(false);
 
-  public language = signal<string>('en');
-  public isLanguage = 'en';
+  public language = signal<string>('es');
+  public isLanguage = 'es';
   public flagEs = './assets/webp/es.webp';
   public flagEn = './assets/webp/en.webp';
   public iconLanguage = './assets/svg/languege.svg';
@@ -128,6 +128,7 @@ export class NavComponent {
   public sanitizedSvg: SafeHtml;
 
   constructor(private _sanitizer: DomSanitizer) {
+    console.log(this.localLanguage);
     this.language.set(this.localLanguage || 'es');
     this.sanitizedSvg = this._sanitizer.bypassSecurityTrustHtml(this.rawSvg());
   }
@@ -148,32 +149,20 @@ export class NavComponent {
     this.language.set(language);
     this._languageSvc.setLanguage(language);
 
-    const dialogRef = this._dialog.open(LanguageComponent, {
-      disableClose: true,
-      width: '100%',
-      maxWidth: '600px',
-      data: language,
-    });
-
-    dialogRef.afterClosed().subscribe((dataResp: string) => {
-      if (!dataResp) return;
-      if (dataResp) {
-        this.language.set(dataResp);
-      }
-    });
+    localStorage.setItem('language', language);
   }
 
-  public selectedLanguage(): void {
-    const dialogRef = this._dialog.open(LanguageComponent, {
-      disableClose: true,
-      width: '600px',
-      data: 'en',
-    });
+  // public selectedLanguage(): void {
+  //   const dialogRef = this._dialog.open(LanguageComponent, {
+  //     disableClose: true,
+  //     width: '600px',
+  //     data: 'en',
+  //   });
 
-    dialogRef.afterClosed().subscribe((dataResp: string) => {
-      if (!dataResp) return;
-    });
-  }
+  //   dialogRef.afterClosed().subscribe((dataResp: string) => {
+  //     if (!dataResp) return;
+  //   });
+  // }
 
   public handleChangeOverlay(): void {
     console.log('handleChangeOverlay');

@@ -1,4 +1,4 @@
-@if (language() === 'es') {
+@if (language() === 'en') {
   @if (isOverlay() === true) {
     <app-overlay-menu (handleChangeOverlay)="handleChangeOverlay()" />
   }
@@ -33,13 +33,20 @@
           </li>
         }
 
-        <!-- <li class="language" (click)="changeLanguage('en')">
-        <img src="{{ flagEn }}" alt="Flag English" />
-      </li> -->
         <li>
           <div class="language">
-            <img src="/assets/svg/language.svg" alt="Flag English" />
-            <span>En</span>
+            <img src="/assets/svg/language.svg" alt="Flag language" />
+            <span
+              [class.active]="language() === 'en'"
+              (click)="changeLanguage('en')"
+              >En</span
+            >
+            <div class="verticalLine"></div>
+            <span
+              [class.active]="language() === 'es'"
+              (click)="changeLanguage('es')"
+              >Es</span
+            >
           </div>
         </li>
       </ul>
@@ -93,7 +100,20 @@
           </li>
 
           <li class="language" (click)="changeLanguage('en')">
-            <img src="{{ flagEn }}" alt="Flag English" />
+            <div class="language">
+              <img src="/assets/svg/language.svg" alt="Flag language" />
+              <span
+                [class.active]="language() === 'en'"
+                (click)="changeLanguage('en')"
+                >En</span
+              >
+              <div class="verticalLine"></div>
+              <span
+                [class.active]="language() === 'es'"
+                (click)="changeLanguage('es')"
+                >Es</span
+              >
+            </div>
           </li>
         </ul>
       </nav>
@@ -137,15 +157,20 @@
           </li>
         }
 
-        <!-- <li class="language" (click)="changeLanguage('es')">
-          <img src="{{ flagEs }}" alt="Flag Spanish" />
-        </li> -->
         <li>
           <div class="language">
-            <img src="{{ iconLanguage }}" alt="Flag English" />
-            <span>En</span>
+            <img src="/assets/svg/language.svg" alt="Flag language" />
+            <span
+              [class.active]="language() === 'en'"
+              (click)="changeLanguage('en')"
+              >En</span
+            >
             <div class="verticalLine"></div>
-            <span>Es</span>
+            <span
+              [class.active]="language() === 'es'"
+              (click)="changeLanguage('es')"
+              >Es</span
+            >
           </div>
         </li>
       </ul>
@@ -198,9 +223,20 @@
             <a routerLink="/pages/home"> American Chamber Commerce </a>
           </li>
 
-          <li class="language" (click)="changeLanguage('es')">
-            <img src="{{ flagEs }}" alt="Flag Spanish" />
-          </li>
+          <div class="language">
+            <img src="/assets/svg/language.svg" alt="Flag language" />
+            <span
+              [class.active]="language() === 'en'"
+              (click)="changeLanguage('en')"
+              >En</span
+            >
+            <div class="verticalLine"></div>
+            <span
+              [class.active]="language() === 'es'"
+              (click)="changeLanguage('es')"
+              >Es</span
+            >
+          </div>
         </ul>
       </nav>
     </ng-container>

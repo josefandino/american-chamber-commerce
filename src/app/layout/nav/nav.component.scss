@@ -19,7 +19,6 @@
   width: 100%;
   max-width: 150px;
   height: auto;
-  min-height: 100px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -34,7 +33,6 @@
     border-radius: 0.3rem;
     padding: 1rem;
     transition: all 0.2s ease;
-    block-size: 100%;
 
     &:hover {
       transform: scale(1.1);
@@ -132,6 +130,10 @@ nav ul li img {
   }
 }
 
+.active {
+  background: rgba(0, 0, 0, 0.6);
+}
+
 .verticalLine {
   width: 1px;
   height: 30px;
@@ -160,11 +162,12 @@ nav ul li img {
     display: block;
     background: var(--color-primary);
     width: 100%;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
@@ -207,9 +210,6 @@ nav ul li img {
   }
 
   .sidebar {
-    position: absolute;
-    z-index: 2;
-    top: 60px;
     left: 0;
     width: 100%;
     height: auto;
@@ -226,7 +226,7 @@ nav ul li img {
   .menuSidebar {
     position: absolute;
     z-index: 2;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 100%;
     height: auto;
@@ -241,26 +241,41 @@ nav ul li img {
       text-align: center;
       border-bottom: 1px solid rgba(243, 243, 243, 0.5);
       cursor: pointer;
+    }
+  }
 
-      img {
-        width: auto !important;
-        height: 50px !important;
-        object-fit: cover !important;
-        object-position: center !important;
-        border-radius: 0.3rem !important;
-        cursor: pointer !important;
-        margin-top: 0.5rem !important;
-        transition: all 0.2s ease !important;
+  .logo {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        &:hover {
-          transform: scale(1.2) !important;
-        }
+    img {
+      // background: #fefefd;
+      width: auto;
+      height: 80px;
 
-        &:active {
-          transform: scale(0.95) !important;
-        }
+      border-radius: 0.3rem;
+      padding: 1rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.95);
       }
     }
+  }
+
+  .language {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
 }
 
