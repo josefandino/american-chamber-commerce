@@ -148,7 +148,7 @@ nav ul li img {
   display: none;
 }
 
-@media only screen and (max-width: 786px) {
+@media only screen and (max-width: 920px) {
   .navPc,
   .overflow {
     display: none;
@@ -214,12 +214,18 @@ nav ul li img {
     width: 100%;
     height: auto;
     min-height: calc(100vh - 50px);
+    // background: linear-gradient(
+    //   to bottom right,
+    //   rgb(3, 5, 34),
+    //   rgb(1, 61, 109)
+    // );
     background: linear-gradient(
       to bottom right,
-      rgb(3, 5, 34),
-      rgb(1, 61, 109)
+      oklch(39.6% 0.141 25.723),
+      oklch(25.8% 0.092 26.042)
     );
     animation-duration: 0.4s;
+    // oklch(63.7% 0.237 25.331)
     animation-timing-function: ease;
   }
 

@@ -30,7 +30,7 @@ export const CHAMBER_INFO = {
   state: 'NY',
   country: 'USA',
   postal_code: '10457',
-  phone: '+1-888-98-CHAMBER',
+  phone: '+1-904-397-3437',
   fax: '+1-555-123-4567',
 
   // Emails especializados
