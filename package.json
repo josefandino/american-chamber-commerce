@@ -1,7 +1,8 @@
 {
   "name": "american-chamber-commerce",
   "version": "1.0.0",
-  "build": "0.0.1",
+  "build": "0.0.2",
+  "date_build": "2025-08-25",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

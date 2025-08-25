@@ -17,14 +17,20 @@ import { EnHomeComponent } from './en-home/en-home.component';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  template: `
+    @if (language() === 'es') {
+      <app-es-home />
+    } @else {
+      <app-en-home />
+    }
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AngularModule, MaterialModule, EsHomeComponent],
+  imports: [AngularModule, MaterialModule, EsHomeComponent, EnHomeComponent],
 })
 export default class HomeComponent implements OnInit {
   private localLanguage = localStorage.getItem('language');
 
-  public language = signal<string>('en');
+  public language = signal<string>('es');
 
   private readonly _languageSvc = inject(LanguageService);
 

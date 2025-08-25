@@ -1,5 +1,39 @@
+<div class="slider">
+  <div class="childSlider" #slider>
+    @for (slide of sliderList; track slide.id) {
+      <div class="slide">
+        <img [src]="slide.img" [alt]="slide.alt" />
+      </div>
+    }
+    <!-- Se duplica el primer slide para efecto infinito -->
+    <div class="slide">
+      <img [src]="sliderList[0].img" [alt]="sliderList[0].alt" />
+    </div>
+  </div>
+</div>
+
 <main class="pages">
   <div class="content fadeIn">
     <h1>American Chamber Commerce</h1>
+    <p class="text-center" style="font-size: 1.4rem !important">
+      <i>
+        At American Chamber Commerce, we provide legal and business solutions
+        that allow you to grow securely, expand your opportunities, and connect
+        with clients worldwide.
+      </i>
+    </p>
+    <p style="font-size: 1.2rem !important; text-align: center !important">
+      We take your business to the next level: connect, grow, and transcend
+      without borders.
+    </p>
+
+    <h3 style="text-align: center !important; font-size: 1.5rem !important">
+      Join the Chamber of Commerce
+    </h3>
+
+    <div class="btnValid mt-2" routerLink="/memberships">Join</div>
+
+    <h2>Preguntas Frecuentes (FAQs)</h2>
+    <app-accordion [accordionsData]="preguntasFrecuentesData" />
   </div>
 </main>
