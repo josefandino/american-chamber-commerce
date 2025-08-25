@@ -5,7 +5,7 @@ import { TextService } from '@shared/helpers';
   selector: 'app-es-about',
   imports: [],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss',
+  styleUrl: '../about.component.scss',
 })
 export default class EsAboutComponent implements OnInit {
   title: string = '';

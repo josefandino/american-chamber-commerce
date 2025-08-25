@@ -1,20 +1,27 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+
+import { Subject, takeUntil } from 'rxjs';
+
 import { UnsubscribeSubject } from '@shared/models/global.interface';
 import { LanguageService } from '@shared/services/language.service';
-import { Subject, takeUntil } from 'rxjs';
+
 import EnAboutComponent from './en-about/about.component';
 import EsAboutComponent from './es-about/about.component';
 
 @Component({
   selector: 'app-about',
-  imports: [EsAboutComponent],
-  templateUrl: './about.component.html',
+  imports: [EsAboutComponent, EnAboutComponent],
+  template: ` @if (language() === 'es') {
+      <app-es-about />
+    } @else {
+      <app-en-about />
+    }`,
   styleUrl: './about.component.scss',
 })
 export default class AboutComponent implements OnInit {
   private localLanguage = localStorage.getItem('language');
 
-  public language = signal<string>('en');
+  public language = signal<string>('es');
 
   private readonly _languageSvc = inject(LanguageService);
 
