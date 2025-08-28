@@ -110,8 +110,6 @@ export class NavComponent {
   //   path: '/contact',
   // },
 
-  private localLanguage = localStorage.getItem('language');
-
   public isOverlay = signal<boolean>(false);
 
   public language = signal<string>('es');
@@ -128,7 +126,8 @@ export class NavComponent {
   public sanitizedSvg: SafeHtml;
 
   constructor(private _sanitizer: DomSanitizer) {
-    this.language.set(this.localLanguage || 'es');
+    // this.language.set(this.localLanguage || 'es');
+    this.language.set(this._languageSvc.getLanguage());
     this.sanitizedSvg = this._sanitizer.bypassSecurityTrustHtml(this.rawSvg());
   }
 
@@ -147,8 +146,6 @@ export class NavComponent {
   public changeLanguage(language: string): void {
     this.language.set(language);
     this._languageSvc.setLanguage(language);
-
-    localStorage.setItem('language', language);
   }
 
   public handleChangeOverlay(): void {

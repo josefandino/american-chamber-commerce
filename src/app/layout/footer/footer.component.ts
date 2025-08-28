@@ -17,8 +17,6 @@ export class FooterComponent {
   title = 'American Chamber Commerce';
   year = new Date().getFullYear();
 
-  private localLanguage = localStorage.getItem('language');
-
   public language = signal<string>('en');
 
   readonly chamberInfo = CHAMBER_INFO;
@@ -27,7 +25,7 @@ export class FooterComponent {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'es');
+    this.language.set(this._languageSvc.getLanguage());
   }
 
   ngOnInit() {

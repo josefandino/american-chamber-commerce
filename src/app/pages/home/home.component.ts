@@ -28,8 +28,6 @@ import { EnHomeComponent } from './en-home/en-home.component';
   imports: [AngularModule, MaterialModule, EsHomeComponent, EnHomeComponent],
 })
 export default class HomeComponent implements OnInit {
-  private localLanguage = localStorage.getItem('language');
-
   public language = signal<string>('es');
 
   private readonly _languageSvc = inject(LanguageService);
@@ -37,7 +35,7 @@ export default class HomeComponent implements OnInit {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'es');
+    this.language.set(this._languageSvc.getLanguage());
   }
 
   ngOnInit() {

@@ -25,8 +25,6 @@ import { Subject, takeUntil } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HowToApplyComponent {
-  private localLanguage = localStorage.getItem('language');
-
   public language = signal<string>('en');
 
   private readonly _languageSvc = inject(LanguageService);
@@ -34,7 +32,7 @@ export class HowToApplyComponent {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'es');
+    this.language.set(this._languageSvc.getLanguage());
   }
 
   ngOnInit() {

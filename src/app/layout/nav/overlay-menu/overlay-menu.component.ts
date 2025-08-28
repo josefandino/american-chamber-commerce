@@ -21,8 +21,6 @@ import { UnsubscribeSubject } from '@shared/models/global.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OverlayMenuComponent implements OnInit {
-  private localLanguage = localStorage.getItem('language');
-
   public language = signal<string>('en');
 
   private readonly _languageSvc = inject(LanguageService);
@@ -39,7 +37,7 @@ export class OverlayMenuComponent implements OnInit {
   // private readonly _programsSvc = inject(ProgramsService);
 
   constructor() {
-    this.language.set(this.localLanguage || 'es');
+    this.language.set(this._languageSvc.getLanguage());
   }
 
   ngOnInit(): void {

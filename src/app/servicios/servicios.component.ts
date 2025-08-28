@@ -25,8 +25,6 @@ import { LanguageService } from '@shared/services/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServiciosComponent implements OnInit {
-  private localLanguage = localStorage.getItem('language');
-
   public language = signal<string>('es');
 
   private readonly _languageSvc = inject(LanguageService);
@@ -34,7 +32,7 @@ export class ServiciosComponent implements OnInit {
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
   constructor() {
-    this.language.set(this.localLanguage || 'es');
+    this.language.set(this._languageSvc.getLanguage());
   }
 
   ngOnInit() {

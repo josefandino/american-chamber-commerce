@@ -8,14 +8,12 @@ import { NavigationEnd, Router } from '@angular/router';
 import { LanguageService } from '@shared/services/language.service';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
-    imports: [AngularModule, NavComponent, FooterComponent]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
+  imports: [AngularModule, NavComponent, FooterComponent],
 })
 export class AppComponent implements OnInit {
-  private localLanguage = localStorage.getItem('language');
-
   showGoBackTopButton = false;
   private routerSubscription: Subscription | undefined;
 
@@ -23,7 +21,7 @@ export class AppComponent implements OnInit {
   private readonly _languageSvc = inject(LanguageService);
 
   constructor() {
-    const language = this.localLanguage || 'en';
+    const language = this._languageSvc.getLanguage();
     this._languageSvc.setLanguage(language);
   }
 

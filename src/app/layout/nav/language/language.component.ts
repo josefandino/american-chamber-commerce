@@ -10,11 +10,11 @@ import { AngularModule, MaterialModule } from '@shared/modules';
 import { LanguageService } from '@shared/services/language.service';
 
 @Component({
-    selector: 'app-language',
-    imports: [AngularModule, MaterialModule],
-    templateUrl: './language.component.html',
-    styleUrl: './language.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-language',
+  imports: [AngularModule, MaterialModule],
+  templateUrl: './language.component.html',
+  styleUrl: './language.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LanguageComponent {
   public language = signal<string>('en');
@@ -32,8 +32,6 @@ export class LanguageComponent {
     this.language.set(language);
     this._languageSvc.setLanguage(language);
     this.executeAction();
-
-    localStorage.setItem('language', language);
   }
 
   private executeAction() {
