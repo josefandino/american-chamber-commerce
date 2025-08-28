@@ -58,7 +58,7 @@ export class OverlayMenuComponent implements OnInit {
   }
 
   private getPrograms(langue: string): void {
-    if (langue === 'es') {
+    if (langue === 'en') {
       // this._programsSvc.esLanguage().subscribe((resp: ProgramsI[]) => {
       //   this.listProgramsEs.set(resp);
       // });

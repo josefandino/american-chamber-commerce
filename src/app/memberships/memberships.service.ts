@@ -1,31 +1,34 @@
-import { HttpClient, HttpResponseBase } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { HttpClient, HttpResponseBase } from '@angular/common/http';
+import { Observable, take, tap, catchError } from 'rxjs';
+
 import { environment } from 'environments/environment.prod';
-import { Observable, take, tap, catchError, map } from 'rxjs';
+
 import { MembershipsI } from './memberships.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MembershipsService {
-  urlMemberships = environment.urlMemberships;
+  urlEsMemberships = environment.urlEsMemberships;
+  urlEnMemberships = environment.urlEnMemberships;
 
   private readonly _http = inject(HttpClient);
 
-  // public getMemberships(): Observable<MembershipI[]> {
-  //   const url = `${this.urlMemberships}`;
+  public getEsMemberships(): Observable<MembershipsI> {
+    const url = `${this.urlEsMemberships}`;
 
-  //   return this._http.get<MembershipI[]>(url).pipe(
-  //     take(1),
-  //     tap((resp: MembershipI[]) => resp),
-  //     catchError((err: HttpResponseBase) => {
-  //       throw err;
-  //     }),
-  //   );
-  // }
+    return this._http.get<MembershipsI>(url).pipe(
+      take(1),
+      tap((resp: MembershipsI) => resp),
+      catchError((err: HttpResponseBase) => {
+        throw err;
+      }),
+    );
+  }
 
-  public getMemberships(): Observable<MembershipsI> {
-    const url = `${this.urlMemberships}`;
+  public getEnMemberships(): Observable<MembershipsI> {
+    const url = `${this.urlEnMemberships}`;
 
     return this._http.get<MembershipsI>(url).pipe(
       take(1),

@@ -11,15 +11,15 @@ import EsAboutComponent from './es-about/about.component';
 @Component({
   selector: 'app-about',
   imports: [EsAboutComponent, EnAboutComponent],
-  template: ` @if (language() === 'es') {
-      <app-es-about />
-    } @else {
+  template: ` @if (language() === 'en') {
       <app-en-about />
+    } @else {
+      <app-es-about />
     }`,
   styleUrl: './about.component.scss',
 })
 export default class AboutComponent implements OnInit {
-  public language = signal<string>('es');
+  public language = signal<string>('en');
 
   private readonly _languageSvc = inject(LanguageService);
 

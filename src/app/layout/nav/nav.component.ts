@@ -1,6 +1,5 @@
-import { Component, HostListener, inject, output, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
-import { MatDialog } from '@angular/material/dialog';
 
 import { Subject } from 'rxjs';
 
@@ -9,15 +8,8 @@ import { AngularModule, MaterialModule } from '@shared/modules';
 import { LanguageService } from '@shared/services/language.service';
 
 import { OverlayMenuComponent } from '@layout/nav/overlay-menu/overlay-menu.component';
-import { LanguageComponent } from './language/language.component';
 
 import { UnsubscribeSubject } from '@shared/models/global.interface';
-
-interface NavI {
-  name: string;
-  path: string;
-  navigate?: boolean;
-}
 
 @Component({
   selector: 'app-nav',
@@ -112,21 +104,19 @@ export class NavComponent {
 
   public isOverlay = signal<boolean>(false);
 
-  public language = signal<string>('es');
-  public isLanguage = 'es';
+  public language = signal<string>('en');
+  public isLanguage = 'en';
   public flagEs = './assets/webp/es.webp';
   public flagEn = './assets/webp/en.webp';
   public iconLanguage = './assets/svg/languege.svg';
 
   protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
-  private readonly _dialog = inject(MatDialog);
   private readonly _languageSvc = inject(LanguageService);
 
   public sanitizedSvg: SafeHtml;
 
   constructor(private _sanitizer: DomSanitizer) {
-    // this.language.set(this.localLanguage || 'es');
     this.language.set(this._languageSvc.getLanguage());
     this.sanitizedSvg = this._sanitizer.bypassSecurityTrustHtml(this.rawSvg());
   }

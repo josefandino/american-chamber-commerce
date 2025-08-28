@@ -1,40 +1,58 @@
-import { HttpResponseBase } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  OnDestroy,
+  signal,
 } from '@angular/core';
-import { Subject, catchError, takeUntil } from 'rxjs';
 import { MembershipsService } from './memberships.service';
 import { AngularModule, MaterialModule } from '@shared/modules';
-import { FormMembershipsComponent } from './form-memberships/form-memberships.component';
+import { LanguageService } from '@shared/services/language.service';
 
+import { EnMembershipComponent } from './en-membership/en-membership.component';
+import { EsMembershipComponent } from './es-membership/es-membership.component';
+import { Subject, takeUntil } from 'rxjs';
+import { UnsubscribeSubject } from '@shared/models/global.interface';
 @Component({
   selector: 'app-memberships',
-  imports: [AngularModule, MaterialModule, FormMembershipsComponent],
-  templateUrl: './memberships.component.html',
+  imports: [
+    AngularModule,
+    MaterialModule,
+    EnMembershipComponent,
+    EsMembershipComponent,
+  ],
+  template: ` @if (language() === 'en') {
+      <app-en-membership />
+    } @else {
+      <app-es-membership />
+    }`,
   styleUrl: './memberships.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MembershipsComponent {
-  private readonly _membershipsService = inject(MembershipsService);
+  public language = signal('en');
 
-  public memberships$ = this._membershipsService.getMemberships();
+  protected readonly unsubscribeAll: UnsubscribeSubject = new Subject<void>();
 
-  public formatBenefits(benefits: any) {
-    const result: { label: string; active: boolean }[] = [];
+  private readonly _languageSvc = inject(LanguageService);
 
-    for (const key of Object.keys(benefits)) {
-      if (key.endsWith('_bool')) {
-        const baseKey = key.replace('_bool', '');
-        result.push({
-          label: benefits[baseKey], // el texto descriptivo
-          active: Boolean(benefits[key]), // true/false o número > 0
-        });
-      }
-    }
+  constructor() {
+    this.language.set(this._languageSvc.getLanguage());
+  }
 
-    return result;
+  ngOnInit() {
+    this.listenerLanguage();
+  }
+
+  private listenerLanguage(): void {
+    this._languageSvc.language$
+      .pipe(takeUntil(this.unsubscribeAll))
+      .subscribe((langue: string) => {
+        this.language.set(langue);
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribeAll.next();
+    this.unsubscribeAll.complete();
   }
 }

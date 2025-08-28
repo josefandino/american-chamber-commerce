@@ -18,17 +18,17 @@ import { EnHomeComponent } from './en-home/en-home.component';
 @Component({
   selector: 'app-home',
   template: `
-    @if (language() === 'es') {
-      <app-es-home />
-    } @else {
+    @if (language() === 'en') {
       <app-en-home />
+    } @else {
+      <app-es-home />
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AngularModule, MaterialModule, EsHomeComponent, EnHomeComponent],
 })
 export default class HomeComponent implements OnInit {
-  public language = signal<string>('es');
+  public language = signal<string>('en');
 
   private readonly _languageSvc = inject(LanguageService);
 

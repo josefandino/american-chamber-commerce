@@ -16,16 +16,16 @@ import { LanguageService } from '@shared/services/language.service';
 @Component({
   selector: 'app-servicios',
   imports: [EsServiciosComponent, EnServiciosComponent],
-  template: ` @if (language() === 'es') {
-      <app-es-servicios />
-    } @else {
+  template: ` @if (language() === 'en') {
       <app-en-servicios />
+    } @else {
+      <app-es-servicios />
     }`,
   styleUrl: './servicios.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServiciosComponent implements OnInit {
-  public language = signal<string>('es');
+  public language = signal<string>('en');
 
   private readonly _languageSvc = inject(LanguageService);
 

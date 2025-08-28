@@ -1,0 +1,536 @@
+<section class="pages mt-2">
+  <div class="content mt-2">
+    <h1 class="fadeIn">Nuestras Membresías</h1>
+    <div class="line fadeIn"></div>
+    <h4>
+      Haz crecer tu empresa con el respaldo de la American Chamber Commerce.
+    </h4>
+    <p>
+      Nuestras membresías están diseñadas para adaptarse a las distintas
+      necesidades y etapas de tu negocio, brindándote acceso exclusivo a
+      herramientas, conexiones estratégicas y beneficios que marcarán la
+      diferencia en tu desarrollo empresarial.
+    </p>
+
+    <p>
+      Con cualquiera de nuestras categorías (Silver, Gold, Platinum o Patron),
+      disfrutarás de ventajas como acceso a nuestras publicaciones,
+      asesoramiento especializado, participación en eventos y oportunidades
+      únicas de networking. A medida que avances en tu nivel de membresía,
+      obtendrás beneficios adicionales como invitaciones VIP, promoción
+      destacada de tu marca, campañas personalizadas y acceso preferencial a la
+      Gala Anual.
+    </p>
+
+    <p>
+      Cada plan está pensado para ofrecerte transparencia total, sin costos
+      ocultos ni condiciones ambiguas, garantizando que el valor de tu inversión
+      se traduzca en crecimiento real para tu empresa.
+    </p>
+
+    <p>
+      Elige la membresía que mejor se ajuste a tu estrategia y comienza a
+      conectar con líderes empresariales, instituciones y oportunidades en todo
+      el mundo.
+    </p>
+
+    <!-- Membresías -->
+    <!-- @let data = memberships$ | async;
+
+    @if (memberships$ | async) {
+      <p>Membresía Anual</p>
+      <div class="bodyWrapper">
+        <div class="memberships">
+          @for (membership of data?.memberships; track $index) {
+            @if (membership.price_usd === 0) {
+              <div class="membershipHeaderLine">
+                <p>{{ membership.category }}</p>
+              </div>
+            } @else {
+              <div class="membershipHeader">
+                <p>{{ membership.category }}</p>
+                <span>{{ membership.price_usd | currency: 'USD' }}</span>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    } -->
+    <h2>Annual Membership</h2>
+    <div class="line"></div>
+    <div class="bodyWrapper">
+      <div class="memberships">
+        <div class="membershipHeaderLine">
+          <p>Option</p>
+        </div>
+
+        <div class="membershipHeaderLine">
+          <p>Silver</p>
+          <span>$150.00</span>
+        </div>
+
+        <div class="membershipHeader">
+          <p>Gold</p>
+          <span>$220.00</span>
+        </div>
+        <div class="membershipHeader">
+          <p>Platinum</p>
+          <span>$500.00</span>
+        </div>
+        <div class="membershipHeader">
+          <p>Diamond</p>
+          <span>$700.00</span>
+        </div>
+      </div>
+    </div>
+    <!-- Options -->
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Acceso a todas las publicaciones oficiales de la Cámara.</span>
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Acceso completo al portal de empleos.</span>
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Asistencia en el procesamiento de visas, con prioridad
+            estándar.</span
+          >
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Acceso a ofertas y descuentos especiales de otros socios de la
+            Cámara.</span
+          >
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Asesoría y actualizaciones en temas relacionados con la FDA.</span
+          >
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Invitaciones a todos los eventos organizados por la Cámara (sin
+            prioridad en registro).</span
+          >
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Descuentos en servicios ofrecidos por la Cámara.</span>
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Inclusión de anuncios en el newsletter mensual enviado a
+            socios.</span
+          >
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Promoción especial en encuentros de directorio de socios.</span>
+        </div>
+
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Número de invitados permitidos en eventos: </span>
+        </div>
+        <div class="benefitsTrue">
+          <span>1</span>
+        </div>
+        <div class="benefitsTrue">
+          <span>2</span>
+        </div>
+        <div class="benefitsTrue">
+          <span>3</span>
+        </div>
+        <div class="benefitsTrue">
+          <span>5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Logotipo de la empresa en el sitio web de la Cámara con enlace
+            directo.</span
+          >
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Invitaciones VIP a eventos exclusivos.</span>
+        </div>
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Publicación de artículos, noticias y eventos en el newsletter de la
+            Cámara.</span
+          >
+        </div>
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Servicio de e-mailings personalizados para promover
+            eventos/servicios.</span
+          >
+        </div>
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Acceso gratuito limitado a salas de reuniones en la oficina de
+            Nueva York.</span
+          >
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Invitación a la reunión anual de la Cámara.</span>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Posibilidad de realizar webinars personalizados (hasta 2 al
+            año).</span
+          >
+        </div>
+        <div class="benefitsFalse">
+          <mat-icon fontIcon="cancel"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span>Acceso a la Gala Anual.</span>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="bodyWrapper">
+      <div class="bodyContent">
+        <div class="contentText">
+          <span
+            >Participación activa en los eventos organizados por la
+            Cámara.</span
+          >
+        </div>
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+
+        <div class="benefitsTrue">
+          <mat-icon fontIcon="check_circle"></mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <app-form-memberships />
+  </div>
+</section>
